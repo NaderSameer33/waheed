@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/splash/views/splash_view.dart';
 import 'package:waheed/core/constants/app_constant.dart';
 import 'package:waheed/core/router/app_route_name.dart';
 import 'package:waheed/core/router/app_router.dart';
