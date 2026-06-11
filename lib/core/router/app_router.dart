@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:waheed/_features/onborading/on_borading_view.dart';
+import 'package:waheed/_features/onborading/views/on_borading_view.dart';
 import 'package:waheed/_features/splash/views/splash_view.dart';
 import 'package:waheed/core/router/app_route_name.dart';
 

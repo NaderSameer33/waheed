@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/_features/splash/views/splash_view.dart';
 import 'package:waheed/core/constants/app_constant.dart';
@@ -25,6 +26,11 @@ class WaheedApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           fontFamily: AppConstant.appFontFamily,
         ),
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
         locale: Locale('ar'),
         supportedLocales: [Locale('ar')],
         debugShowCheckedModeBanner: false,
