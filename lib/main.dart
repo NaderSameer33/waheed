@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/_features/splash/views/splash_view.dart';
 import 'package:waheed/core/constants/app_constant.dart';
+import 'package:waheed/core/router/app_route_name.dart';
+import 'package:waheed/core/router/app_router.dart';
 
 void main() {
   runApp(const WaheedApp());
@@ -18,6 +20,7 @@ class WaheedApp extends StatelessWidget {
       splitScreenMode: true,
 
       child: MaterialApp(
+        onGenerateRoute: AppRouter.routeConfig,
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
           fontFamily: AppConstant.appFontFamily,
@@ -25,7 +28,7 @@ class WaheedApp extends StatelessWidget {
         locale: Locale('ar'),
         supportedLocales: [Locale('ar')],
         debugShowCheckedModeBanner: false,
-        home: SplashView(),
+        initialRoute: AppRouteName.splash,
       ),
     );
   }

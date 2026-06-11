@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 extension SizedboxExtenstion on num {
-  SizedBox get ph => SizedBox(
+  SizedBox get vs => SizedBox(
     height: h,
   );
-  SizedBox get pw => SizedBox(
+  SizedBox get hs => SizedBox(
     width: w,
   );
 }
