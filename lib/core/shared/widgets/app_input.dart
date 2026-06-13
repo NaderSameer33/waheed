@@ -29,6 +29,7 @@ class _AppInputState extends State<AppInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: widget.isPassword && isHide,
       controller: widget.controller,
       keyboardType: widget.textInputType,
       decoration: InputDecoration(

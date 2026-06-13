@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/auth/login/presentation/widgets/login_with_social.dart';
+import 'package:waheed/_features/auth/login/presentation/widgets/login_with_social_item.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 import 'package:waheed/core/shared/widgets/app_button.dart';
 import 'package:waheed/core/shared/widgets/app_input.dart';
@@ -32,7 +32,9 @@ class LoginView extends StatelessWidget {
                 ),
               ),
               4.vs,
-              ApploginOrReginster(),
+              ApploginOrReginster(
+                isLogin: true,
+              ),
               16.vs,
               Text(
                 'البريد الإلكتروني',
@@ -82,7 +84,7 @@ class LoginView extends StatelessWidget {
               16.vs,
               AuthDivider(),
               16.vs,
-              LoginWithSocial(),
+              LoginWithSocialItem(),
             ],
           ),
         ),

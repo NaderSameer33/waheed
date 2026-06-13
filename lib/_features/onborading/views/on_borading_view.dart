@@ -16,7 +16,7 @@ class OnBoradingView extends StatelessWidget {
       body: OnBoradingAuthItem(
         child: Padding(
           padding: EdgeInsets.only(
-            bottom: MediaQuery.of(context).padding.bottom,
+            bottom: MediaQuery.of(context).padding.bottom + 20,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,

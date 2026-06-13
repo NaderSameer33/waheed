@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:waheed/_features/auth/login/presentation/views/login_view.dart';
+import 'package:waheed/_features/auth/register/presentation/views/register_view.dart';
 import 'package:waheed/_features/onborading/views/on_borading_view.dart';
 import 'package:waheed/_features/splash/views/splash_view.dart';
 import 'package:waheed/core/router/app_route_name.dart';
@@ -19,6 +20,10 @@ abstract class AppRouter {
       case AppRouteName.login:
         return CupertinoPageRoute(
           builder: (context) => LoginView(),
+        );
+      case AppRouteName.register:
+        return CupertinoPageRoute(
+          builder: (context) => RegisterView(),
         );
     }
     return null;

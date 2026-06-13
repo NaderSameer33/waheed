@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/core/extensions/navigator_extenstion.dart';
+import 'package:waheed/core/router/app_route_name.dart';
 
 class ApploginOrReginster extends StatelessWidget {
   const ApploginOrReginster({
     super.key,
+    this.isLogin = false,
   });
+  final bool isLogin;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +17,7 @@ class ApploginOrReginster extends StatelessWidget {
       TextSpan(
         children: [
           TextSpan(
-            text: 'ليس لديك حساب ؟',
+            text: isLogin ? 'ليس لديك حساب ؟' : 'لديك جساب ب الفعل',
             style: TextStyle(
               fontWeight: FontWeight.w400,
               fontSize: 14.sp,
@@ -23,9 +27,13 @@ class ApploginOrReginster extends StatelessWidget {
           WidgetSpan(
             alignment: PlaceholderAlignment.middle,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                isLogin
+                    ? context.pushName(page: AppRouteName.register)
+                    : context.popName();
+              },
               child: Text(
-                'انشاء حساب جديد',
+                isLogin ? 'انشاء حساب جديد' : 'تسجيل الدخول ',
                 style: TextStyle(
                   color: Colors.black,
                 ),

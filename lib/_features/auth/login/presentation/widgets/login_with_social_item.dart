@@ -6,8 +6,8 @@ import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 import 'package:waheed/core/shared/utils/app_colors.dart';
 import 'package:waheed/core/shared/widgets/app_image.dart';
 
-class LoginWithSocial extends StatelessWidget {
-  const LoginWithSocial({super.key});
+class LoginWithSocialItem extends StatelessWidget {
+  const LoginWithSocialItem({super.key});
 
   @override
   Widget build(BuildContext context) {
