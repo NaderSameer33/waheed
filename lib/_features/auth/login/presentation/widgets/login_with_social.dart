@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
@@ -11,35 +13,36 @@ class LoginWithSocial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              fixedSize: Size.fromHeight(48.h),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(14.r),
-              ),
-              backgroundColor: Colors.white,
-              side: BorderSide(
-                color: AppColors.borderColor,
-              ),
-            ),
-            onPressed: () {},
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                AppImage(image: 'apple.svg'),
-                Text(
-                  'apple',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 13.sp,
-                  ),
+        if (Platform.isIOS)
+          Expanded(
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                fixedSize: Size.fromHeight(48.h),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(14.r),
                 ),
-              ],
+                backgroundColor: Colors.white,
+                side: BorderSide(
+                  color: AppColors.borderColor,
+                ),
+              ),
+              onPressed: () {},
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  AppImage(image: 'apple.svg'),
+                  Text(
+                    'apple',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 13.sp,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
         12.hs,
         Expanded(
           child: ElevatedButton(
