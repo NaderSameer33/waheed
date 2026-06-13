@@ -14,6 +14,7 @@ class OnBoradingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: OnBoradingAuthItem(
+        height: 232.h,
         child: Padding(
           padding: EdgeInsets.only(
             bottom: MediaQuery.of(context).padding.bottom + 20,

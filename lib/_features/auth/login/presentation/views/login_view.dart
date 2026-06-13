@@ -15,6 +15,7 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: OnBoradingAuthItem(
+        height: 512.h,
         child: SingleChildScrollView(
           padding: EdgeInsets.only(
             bottom: MediaQuery.of(context).padding.bottom + 20,
@@ -33,7 +34,7 @@ class LoginView extends StatelessWidget {
               ),
               4.vs,
               ApploginOrReginster(
-                isLogin:  true ,
+                isLogin: true,
               ),
               16.vs,
               Text(
@@ -59,6 +60,7 @@ class LoginView extends StatelessWidget {
               ),
               4.vs,
               AppInput(
+                textInputAction: TextInputAction.done,
                 hintText: 'كلمة المرور',
                 textInputType: TextInputType.visiblePassword,
                 isPassword: true,

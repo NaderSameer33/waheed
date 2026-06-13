@@ -12,6 +12,8 @@ class AppInput extends StatefulWidget {
     this.textInputType,
     this.controller,
     this.isPassword = false,
+    this.focusNode,
+    this.textInputAction = TextInputAction.next,
   });
   final String? hintText;
   final String? suffixIcon;
@@ -19,6 +21,8 @@ class AppInput extends StatefulWidget {
   final TextInputType? textInputType;
   final TextEditingController? controller;
   final bool isPassword;
+  final FocusNode? focusNode;
+  final TextInputAction? textInputAction;
 
   @override
   State<AppInput> createState() => _AppInputState();
@@ -29,6 +33,8 @@ class _AppInputState extends State<AppInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      textInputAction: widget.textInputAction,
+      focusNode: widget.focusNode,
       obscureText: widget.isPassword && isHide,
       controller: widget.controller,
       keyboardType: widget.textInputType,

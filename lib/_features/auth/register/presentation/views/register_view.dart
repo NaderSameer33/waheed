@@ -15,6 +15,7 @@ class RegisterView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: OnBoradingAuthItem(
+        height: 746.h,
         child: SingleChildScrollView(
           padding: EdgeInsets.only(
             bottom: MediaQuery.of(context).padding.bottom + 20,
@@ -99,6 +100,7 @@ class RegisterView extends StatelessWidget {
               ),
               4.vs,
               AppInput(
+                textInputAction: TextInputAction.done,
                 hintText: 'كلمة المرور',
                 textInputType: TextInputType.visiblePassword,
                 isPassword: true,
