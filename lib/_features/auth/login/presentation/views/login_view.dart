@@ -33,7 +33,7 @@ class LoginView extends StatelessWidget {
               ),
               4.vs,
               ApploginOrReginster(
-                isLogin: true,
+                isLogin:  true ,
               ),
               16.vs,
               Text(

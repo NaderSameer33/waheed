@@ -25,21 +25,24 @@ class WaheedApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
 
-      child: MaterialApp(
-        onGenerateRoute: AppRouter.routeConfig,
-        theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-          fontFamily: AppConstant.appFontFamily,
+      child: GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
+        child: MaterialApp(
+          onGenerateRoute: AppRouter.routeConfig,
+          theme: ThemeData(
+            scaffoldBackgroundColor: Colors.white,
+            fontFamily: AppConstant.appFontFamily,
+          ),
+          localizationsDelegates: [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          locale: Locale('ar'),
+          supportedLocales: [Locale('ar')],
+          debugShowCheckedModeBanner: false,
+          initialRoute: AppRouteName.splash,
         ),
-        localizationsDelegates: [
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        locale: Locale('ar'),
-        supportedLocales: [Locale('ar')],
-        debugShowCheckedModeBanner: false,
-        initialRoute: AppRouteName.splash,
       ),
     );
   }
