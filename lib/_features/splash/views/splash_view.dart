@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/core/extensions/navigator_extenstion.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 import 'package:waheed/core/router/app_route_name.dart';
-import 'package:waheed/core/shared/app_image.dart';
+import 'package:waheed/core/shared/widgets/app_image.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
