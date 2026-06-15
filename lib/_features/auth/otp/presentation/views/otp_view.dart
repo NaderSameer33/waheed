@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/core/extensions/navigator_extenstion.dart';
+import 'package:waheed/core/router/app_route_name.dart';
+import 'package:waheed/core/shared/widgets/app_button.dart';
 import 'package:waheed/core/shared/widgets/app_input_fild.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 import 'package:waheed/core/shared/widgets/app_back.dart';
@@ -61,6 +64,12 @@ class OtpView extends StatelessWidget {
               ),
               10.vs,
               AppResendCode(),
+              60.vs,
+              AppButton(
+                onPressed: () =>
+                    context.pushReplacment(page: AppRouteName.login),
+                title: 'تحقق',
+              ),
             ],
           ),
         ),
