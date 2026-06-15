@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/_features/auth/login/presentation/widgets/login_with_social_item.dart';
+import 'package:waheed/core/extensions/navigator_extenstion.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
+import 'package:waheed/core/router/app_route_name.dart';
 import 'package:waheed/core/shared/widgets/app_button.dart';
 import 'package:waheed/core/shared/widgets/app_input.dart';
 import 'package:waheed/core/shared/widgets/app_login_or_register.dart';
@@ -69,7 +71,8 @@ class LoginView extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () =>
+                      context.pushName(page: AppRouteName.forgetPassword),
                   child: Text(
                     'هل نسيت كلمة المرور ؟',
                     style: TextStyle(
