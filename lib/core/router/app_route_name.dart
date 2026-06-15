@@ -7,6 +7,7 @@ abstract class AppRouteName {
  static const register = '/register' ; 
  static const forgetPassword = '/forgetPassword' ; 
  static const otp = '/otp' ; 
+ static const home = '/home' ; 
 
 
 }

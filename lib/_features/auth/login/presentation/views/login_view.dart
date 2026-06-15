@@ -84,7 +84,11 @@ class LoginView extends StatelessWidget {
                 ),
               ),
               24.vs,
-              AppButton(onPressed: () {}, title: 'تسجيل الدخول'),
+              AppButton(
+                onPressed: () =>
+                    context.pushReplacment(page: AppRouteName.home),
+                title: 'تسجيل الدخول',
+              ),
 
               16.vs,
               AuthDivider(),
