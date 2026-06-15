@@ -5,6 +5,7 @@ import 'package:waheed/_features/auth/forget_passwrod/presentation/widgets/forge
 import 'package:waheed/_features/auth/forget_passwrod/presentation/widgets/otp_step.dart';
 import 'package:waheed/_features/auth/forget_passwrod/presentation/widgets/success_step.dart';
 import 'package:waheed/core/enums/forget_password_step.dart';
+import 'package:waheed/core/extensions/navigator_extenstion.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 import 'package:waheed/core/shared/utils/app_colors.dart';
 import 'package:waheed/core/shared/widgets/app_back.dart';
@@ -17,14 +18,36 @@ class ForegetPasswordView extends StatefulWidget {
 }
 
 class _ForegetPasswordViewState extends State<ForegetPasswordView> {
-  ForgetPasswordStep currentStep = ForgetPasswordStep.email;
+  ForgetPasswordStep _currentStep = ForgetPasswordStep.email;
+
+  void _goBack() {
+    switch (_currentStep) {
+      case ForgetPasswordStep.email:
+        context.popName();
+      case ForgetPasswordStep.otp:
+        setState(() {
+          _currentStep = ForgetPasswordStep.email;
+        });
+      case ForgetPasswordStep.success:
+        setState(() {
+          _currentStep = ForgetPasswordStep.otp;
+        });
+    }
+  }
+
+  int get currentIndex => switch (_currentStep) {
+    ForgetPasswordStep.email => 0,
+    ForgetPasswordStep.otp => 1,
+    ForgetPasswordStep.success => 2,
+  };
+
   Widget _buildCurrentStep() {
-    switch (currentStep) {
+    switch (_currentStep) {
       case ForgetPasswordStep.email:
         return EmailStep(
           onPressed: () {
             setState(() {
-              currentStep = ForgetPasswordStep.otp;
+              _currentStep = ForgetPasswordStep.otp;
             });
           },
           key: ValueKey('email'),
@@ -33,7 +56,7 @@ class _ForegetPasswordViewState extends State<ForegetPasswordView> {
         return OtpStep(
           onPressed: () {
             setState(() {
-              currentStep = ForgetPasswordStep.success;
+              _currentStep = ForgetPasswordStep.success;
             });
           },
           key: ValueKey('otp'),
@@ -55,7 +78,9 @@ class _ForegetPasswordViewState extends State<ForegetPasswordView> {
             children: [
               Row(
                 children: [
-                  AppBack(),
+                  AppBack(
+                    onPressed: _goBack,
+                  ),
                   Spacer(),
                   Text(
                     'نسيت كلمة المرور',
@@ -71,14 +96,16 @@ class _ForegetPasswordViewState extends State<ForegetPasswordView> {
 
               32.vs,
               Text(
-                'خطوة 1/ 3',
+                'خطوه $currentIndex / 2',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 14.sp,
                 ),
               ),
               12.vs,
-              ForgetPassIndecatore(),
+              ForgetPassIndecatore(
+                currentIndex: currentIndex,
+              ),
               24.vs,
               Container(
                 width: double.infinity,

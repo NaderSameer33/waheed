@@ -5,8 +5,8 @@ import 'package:waheed/core/shared/utils/app_colors.dart';
 import 'package:waheed/core/shared/widgets/app_image.dart';
 
 class AppBack extends StatelessWidget {
-  const AppBack({super.key});
-
+  const AppBack({super.key, this.onPressed});
+  final VoidCallback ? onPressed ;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -31,7 +31,7 @@ class AppBack extends StatelessWidget {
           ],
         ),
         child: IconButton(
-          onPressed: () => context.popName(),
+          onPressed: onPressed ??  () => context.popName(),
           icon: AppImage(image: 'arrow_back.svg'),
         ),
       ),

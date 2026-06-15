@@ -1,45 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 
 class ForgetPassIndecatore extends StatelessWidget {
-  const ForgetPassIndecatore({super.key});
-
+  const ForgetPassIndecatore({super.key, required this.currentIndex});
+  final int currentIndex;
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
-        Expanded(
-          child: Container(
+      children: List.generate(
+        3,
+        (index) => Expanded(
+          child: AnimatedContainer(
+            duration: Duration(seconds: 1),
+            margin: EdgeInsets.only(left: 8.r),
             height: 6.h,
             decoration: BoxDecoration(
-              color: Colors.black,
+              color: index <= currentIndex ? Colors.black : Colors.grey,
               borderRadius: BorderRadius.circular(12.r),
             ),
           ),
         ),
-        8.hs,
-        Expanded(
-          child: Container(
-            height: 6.h,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-          ),
-        ),
-        8.hs,
-
-        Expanded(
-          child: Container(
-            height: 6.h,
-            decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(12.r),
-            ),
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
