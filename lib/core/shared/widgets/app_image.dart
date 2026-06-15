@@ -11,17 +11,20 @@ class AppImage extends StatelessWidget {
     this.height,
     this.width,
     this.fit,
+    this.color,
   });
   final String image;
   final double? height;
   final double? width;
   final BoxFit? fit;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     if (image.startsWith('http') || image.startsWith('https')) {
       return CachedNetworkImage(
         height: height,
         width: width,
+        color: color,
         fit: fit,
         placeholder: (context, url) => Center(
           child: LoadingAnimationWidget.threeArchedCircle(
@@ -45,6 +48,8 @@ class AppImage extends StatelessWidget {
         'assets/icons/$image',
         fit: fit ?? BoxFit.scaleDown,
         height: height,
+
+        color: color,
         width: width,
       );
     } else {
@@ -53,6 +58,7 @@ class AppImage extends StatelessWidget {
         height: height,
         width: width,
         fit: fit,
+        color: color,
       );
     }
   }
