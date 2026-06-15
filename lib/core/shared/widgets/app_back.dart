@@ -9,28 +9,31 @@ class AppBack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 48.h,
-      width: 48.w,
-      decoration: BoxDecoration(
-        border: BoxBorder.all(
-          width: 1,
-          color: AppColors.borderColor,
-        ),
-        shape: BoxShape.circle,
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, 1),
-            blurRadius: 4,
-            spreadRadius: 1,
-            color: Color(0xff000000).withValues(alpha: .06),
+    return Align(
+      alignment: Alignment.centerRight,
+      child: Container(
+        height: 48.h,
+        width: 48.w,
+        decoration: BoxDecoration(
+          border: BoxBorder.all(
+            width: 1,
+            color: AppColors.borderColor,
           ),
-        ],
-      ),
-      child: IconButton(
-        onPressed: () => context.popName(),
-        icon: AppImage(image: 'arrow_back.svg'),
+          shape: BoxShape.circle,
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(0, 1),
+              blurRadius: 4,
+              spreadRadius: 1,
+              color: Color(0xff000000).withValues(alpha: .06),
+            ),
+          ],
+        ),
+        child: IconButton(
+          onPressed: () => context.popName(),
+          icon: AppImage(image: 'arrow_back.svg'),
+        ),
       ),
     );
   }
