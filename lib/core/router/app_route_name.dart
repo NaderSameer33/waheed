@@ -6,6 +6,7 @@ abstract class AppRouteName {
  static const login = '/login' ; 
  static const register = '/register' ; 
  static const forgetPassword = '/forgetPassword' ; 
+ static const otp = '/otp' ; 
 
 
 }
