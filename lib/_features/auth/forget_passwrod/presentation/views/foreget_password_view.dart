@@ -35,7 +35,7 @@ class _ForegetPasswordViewState extends State<ForegetPasswordView> {
     }
   }
 
-  int get currentIndex => switch (_currentStep) {
+  int get _currentIndex => switch (_currentStep) {
     ForgetPasswordStep.email => 0,
     ForgetPasswordStep.otp => 1,
     ForgetPasswordStep.success => 2,
@@ -96,7 +96,7 @@ class _ForegetPasswordViewState extends State<ForegetPasswordView> {
 
               32.vs,
               Text(
-                'خطوه $currentIndex / 2',
+                'خطوه $_currentIndex / 2',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 14.sp,
@@ -104,7 +104,7 @@ class _ForegetPasswordViewState extends State<ForegetPasswordView> {
               ),
               12.vs,
               ForgetPassIndecatore(
-                currentIndex: currentIndex,
+                currentIndex: _currentIndex,
               ),
               24.vs,
               Container(
