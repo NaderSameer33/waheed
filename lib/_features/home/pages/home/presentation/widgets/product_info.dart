@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/home/pages/home/presentation/widgets/rate_product.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 import 'package:waheed/core/shared/utils/app_colors.dart';
 import 'package:waheed/core/shared/widgets/app_image.dart';
@@ -14,30 +15,7 @@ class ProductInfo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Row(
-            children: [
-              AppImage(
-                image: 'star.svg',
-                height: 20.h,
-                width: 20.w,
-              ),
-              Text(
-                '4.9',
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16.sp,
-                ),
-              ),
-              4.hs,
-              Text(
-                '(128)',
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14.sp,
-                ),
-              ),
-            ],
-          ),
+          RateProduct(),
           8.vs,
           Text(
             'بدلة كلاسيكية سوداء',

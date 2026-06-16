@@ -12,16 +12,24 @@ class AppImage extends StatelessWidget {
     this.width,
     this.fit,
     this.color,
+    this.topSpacing,
+    this.rightSpacing,
+    this.bottomSpacing,
+    this.leftSacing,
+    this.borderRadiut,
   });
   final String image;
   final double? height;
   final double? width;
   final BoxFit? fit;
   final Color? color;
+  final double? topSpacing, rightSpacing, bottomSpacing, leftSacing;
+  final double? borderRadiut;
   @override
   Widget build(BuildContext context) {
+    Widget? child;
     if (image.startsWith('http') || image.startsWith('https')) {
-      return CachedNetworkImage(
+      child = CachedNetworkImage(
         height: height,
         width: width,
         color: color,
@@ -37,14 +45,14 @@ class AppImage extends StatelessWidget {
             Image.asset('assets/images/error.png'),
       );
     } else if (image.endsWith('json')) {
-      return Lottie.asset(
+      child = Lottie.asset(
         'assets/lotties/$image',
         height: height,
         width: width,
         fit: fit,
       );
     } else if (image.endsWith('svg')) {
-      return SvgPicture.asset(
+      child = SvgPicture.asset(
         'assets/icons/$image',
         fit: fit ?? BoxFit.scaleDown,
         height: height,
@@ -53,7 +61,7 @@ class AppImage extends StatelessWidget {
         width: width,
       );
     } else {
-      return Image.asset(
+      child = Image.asset(
         'assets/images/$image',
         height: height,
         width: width,
@@ -61,5 +69,18 @@ class AppImage extends StatelessWidget {
         color: color,
       );
     }
+
+    return Padding(
+      padding: EdgeInsets.only(
+        top: topSpacing ?? 0,
+        right: rightSpacing ?? 0,
+        left: leftSacing ?? 0,
+        bottom: bottomSpacing ?? 0,
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(borderRadiut ?? 0),
+        child: child,
+      ),
+    );
   }
 }
