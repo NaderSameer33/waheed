@@ -28,6 +28,9 @@ class AppImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget? child;
+    if (image.isEmpty) {
+      return SizedBox.shrink();
+    }
     if (image.startsWith('http') || image.startsWith('https')) {
       child = CachedNetworkImage(
         height: height,

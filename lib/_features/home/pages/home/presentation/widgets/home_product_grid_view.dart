@@ -21,13 +21,7 @@ class HomeProductGridView extends StatelessWidget {
       ),
       itemBuilder: (context, index) => GestureDetector(
         onTap: () => context.pushName(page: AppRouteName.details),
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16.r),
-            color: Colors.white,
-          ),
-          child: HomeProductItem(),
-        ),
+        child:HomeProductItem(), 
       ),
     );
   }

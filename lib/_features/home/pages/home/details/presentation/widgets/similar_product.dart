@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/home/pages/home/details/presentation/widgets/similar_product_list_view.dart';
+
+class SimilarProduct extends StatelessWidget {
+  const SimilarProduct({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Text(
+              'منتجات مشابهة',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 18.sp,
+              ),
+            ),
+            Spacer(),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'عرض الكل',
+                style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w500),
+              ),
+            ),
+            SimilarProductListView(),
+          ],
+        ),
+      ],
+    );
+  }
+}
