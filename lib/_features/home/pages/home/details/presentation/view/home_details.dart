@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/home/pages/home/details/presentation/widgets/details_product_colors.dart';
 import 'package:waheed/_features/home/pages/home/details/presentation/widgets/details_product_photo.dart';
 import 'package:waheed/_features/home/pages/home/details/presentation/widgets/detials_quality_and_driver.dart';
 import 'package:waheed/_features/home/pages/home/presentation/widgets/rate_product.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 import 'package:waheed/core/shared/utils/app_colors.dart';
-import 'package:waheed/core/shared/widgets/app_image.dart';
 import 'package:waheed/core/shared/widgets/custom_app_bar.dart';
 
 class HomeDetails extends StatelessWidget {
@@ -32,6 +32,7 @@ class HomeDetails extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  16.vs,
                   Text(
                     'بدلة كلاسيكية',
                     style: TextStyle(
@@ -52,6 +53,12 @@ class HomeDetails extends StatelessWidget {
                   RateProduct(),
                   16.vs,
                   DetailsQulityAndDriver(),
+                  2.vs,
+                  Divider(),
+                  16.vs,
+
+                  DetailsProductColor(),
+                  500.vs,
                 ],
               ),
             ),
