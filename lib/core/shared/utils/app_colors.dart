@@ -5,4 +5,5 @@ abstract class AppColors {
   static const Color borderColor = Color(0xffEAEAEA);
   static const Color navBarColor = Color(0xff919191);
   static const Color scaffoldColor = Color(0xffF6F6F6);
+  static const Color infoColor = Color(0xff6A7282);
 }

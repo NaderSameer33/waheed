@@ -1,9 +1,3 @@
-import 'package:flutter/widgets.dart';
-import 'package:waheed/_features/home/pages/cart/presentation/views/cart_view.dart';
-import 'package:waheed/_features/home/pages/home/presentation/views/home_page.dart';
-import 'package:waheed/_features/home/pages/orders/presentation/views/order_view.dart';
-import 'package:waheed/_features/home/pages/profile/presentation/views/profile_view.dart';
-
 final list = const [
   NavBarModel(
     label: 'الرئيسية',

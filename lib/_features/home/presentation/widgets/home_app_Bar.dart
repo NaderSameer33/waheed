@@ -10,6 +10,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      surfaceTintColor: Colors.transparent,
       actionsPadding: EdgeInsets.symmetric(horizontal: 16.r),
       backgroundColor: Colors.white,
       leading: Container(
