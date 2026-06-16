@@ -5,13 +5,15 @@ import 'package:waheed/core/shared/utils/app_colors.dart';
 import 'package:waheed/core/shared/widgets/app_image.dart';
 
 class AppBack extends StatelessWidget {
-  const AppBack({super.key, this.onPressed});
-  final VoidCallback ? onPressed ;
+  const AppBack({super.key, this.onPressed, this.rightSpacing});
+  final VoidCallback? onPressed;
+  final double? rightSpacing;
   @override
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.centerRight,
       child: Container(
+        margin: EdgeInsets.only(right: rightSpacing ?? 0),
         height: 48.h,
         width: 48.w,
         decoration: BoxDecoration(
@@ -31,7 +33,7 @@ class AppBack extends StatelessWidget {
           ],
         ),
         child: IconButton(
-          onPressed: onPressed ??  () => context.popName(),
+          onPressed: onPressed ?? () => context.popName(),
           icon: AppImage(image: 'arrow_back.svg'),
         ),
       ),

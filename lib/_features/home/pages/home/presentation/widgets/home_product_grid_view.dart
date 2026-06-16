@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/_features/home/pages/home/presentation/widgets/home_product_item.dart';
-
+import 'package:waheed/core/extensions/navigator_extenstion.dart';
+import 'package:waheed/core/router/app_route_name.dart';
 
 class HomeProductGridView extends StatelessWidget {
   const HomeProductGridView({super.key});
@@ -18,12 +19,15 @@ class HomeProductGridView extends StatelessWidget {
         mainAxisSpacing: 16.r,
         crossAxisSpacing: 16.r,
       ),
-      itemBuilder: (context, index) => Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16.r),
-          color: Colors.white,
+      itemBuilder: (context, index) => GestureDetector(
+        onTap: () => context.pushName(page: AppRouteName.details),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16.r),
+            color: Colors.white,
+          ),
+          child: HomeProductItem(),
         ),
-        child: HomeProductItem(),
       ),
     );
   }
