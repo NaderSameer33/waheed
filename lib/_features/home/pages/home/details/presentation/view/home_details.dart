@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/_features/home/pages/home/details/presentation/widgets/details_product_colors.dart';
+import 'package:waheed/_features/home/pages/home/details/presentation/widgets/details_product_descrption.dart';
 import 'package:waheed/_features/home/pages/home/details/presentation/widgets/details_product_photo.dart';
 import 'package:waheed/_features/home/pages/home/details/presentation/widgets/detials_quality_and_driver.dart';
 import 'package:waheed/_features/home/pages/home/presentation/widgets/rate_product.dart';
@@ -58,6 +59,8 @@ class HomeDetails extends StatelessWidget {
                   16.vs,
 
                   DetailsProductColor(),
+
+                  DetailsProductDescrption(),
                   500.vs,
                 ],
               ),

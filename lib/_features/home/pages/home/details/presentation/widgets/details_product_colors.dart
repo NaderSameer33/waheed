@@ -78,6 +78,9 @@ class _DetailsProductColorState extends State<DetailsProductColor> {
             ),
           ],
         ),
+        18.vs,
+        Divider(),
+        24.vs,
       ],
     );
   }
