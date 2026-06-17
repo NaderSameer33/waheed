@@ -41,7 +41,7 @@ class WaheedApp extends StatelessWidget {
           locale: Locale('ar'),
           supportedLocales: [Locale('ar')],
           debugShowCheckedModeBanner: false,
-          initialRoute: AppRouteName.details,
+          initialRoute: AppRouteName.splash,
         ),
       ),
     );
