@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/home/pages/home/presentation/widgets/home_product_item.dart';
+import '../../../home/pages/home/presentation/widgets/home_product_item.dart';
 
 class SimilarProductListView extends StatelessWidget {
   const SimilarProductListView({super.key});

@@ -1,13 +1,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/extensions/navigator_extenstion.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/shared/widgets/app_button.dart';
-import 'package:waheed/core/shared/widgets/bottom_sheet_categories.dart';
+import '../../extensions/navigator_extenstion.dart';
+import '../../extensions/sizedbox_extenstion.dart';
+import 'app_button.dart';
+import 'bottom_sheet_categories.dart';
 
-import 'package:waheed/core/shared/widgets/bottom_sheet_header.dart';
-import 'package:waheed/core/shared/widgets/price_domain.dart';
+import 'bottom_sheet_header.dart';
+import 'price_domain.dart';
 
 class CustomBottomSheet extends StatelessWidget {
   const CustomBottomSheet({super.key});

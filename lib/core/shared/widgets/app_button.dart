@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/shared/widgets/app_image.dart';
+import 'app_image.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({super.key, required this.onPressed, required this.title, this.icon});

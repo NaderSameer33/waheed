@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/shared/utils/app_colors.dart';
-import 'package:waheed/core/shared/widgets/range_slider_item.dart';
+import '../../extensions/sizedbox_extenstion.dart';
+import '../utils/app_colors.dart';
+import 'range_slider_item.dart';
 
 class PriceDomain extends StatefulWidget {
   const PriceDomain({super.key});

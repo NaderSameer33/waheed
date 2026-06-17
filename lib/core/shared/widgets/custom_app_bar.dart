@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/shared/utils/app_colors.dart';
-import 'package:waheed/core/shared/widgets/app_back.dart';
-import 'package:waheed/core/shared/widgets/app_image.dart';
+import '../utils/app_colors.dart';
+import 'app_back.dart';
+import 'app_image.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key, this.action, required this.title});

@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/home/pages/home/presentation/widgets/home_category_grid_view.dart';
-import 'package:waheed/_features/home/pages/home/presentation/widgets/home_indecator.dart';
-import 'package:waheed/_features/home/pages/home/presentation/widgets/home_product_grid_view.dart';
-import 'package:waheed/_features/home/pages/home/presentation/widgets/home_slider.dart';
-import 'package:waheed/_features/home/pages/home/presentation/widgets/home_title.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/func/helper_function.dart';
-import 'package:waheed/core/shared/widgets/app_image.dart';
-import 'package:waheed/core/shared/widgets/app_input.dart';
-import 'package:waheed/core/shared/widgets/custom_bottom_sheet.dart';
+import '../widgets/home_category_grid_view.dart';
+import '../widgets/home_product_grid_view.dart';
+import '../widgets/home_slider.dart';
+import '../widgets/home_title.dart';
+import '../../../../../../core/extensions/sizedbox_extenstion.dart';
+import '../../../../../../core/func/helper_function.dart';
+import '../../../../../../core/shared/widgets/app_input.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

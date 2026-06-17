@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/shared/utils/app_colors.dart';
-import 'package:waheed/core/shared/widgets/app_image.dart';
+import '../utils/app_colors.dart';
+import 'app_image.dart';
 
 class AppInput extends StatefulWidget {
   const AppInput({

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/auth/login/presentation/widgets/login_with_social_item.dart';
-import 'package:waheed/_features/auth/otp/presentation/views/otp_view.dart';
-import 'package:waheed/core/extensions/navigator_extenstion.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/router/app_route_name.dart';
-import 'package:waheed/core/shared/widgets/app_button.dart';
-import 'package:waheed/core/shared/widgets/app_input.dart';
-import 'package:waheed/core/shared/widgets/app_login_or_register.dart';
-import 'package:waheed/core/shared/widgets/auth_divider.dart';
-import 'package:waheed/core/shared/widgets/on_borading_auth_item.dart';
+import '../../../login/presentation/widgets/login_with_social_item.dart';
+import '../../../otp/presentation/views/otp_view.dart';
+import '../../../../../core/extensions/navigator_extenstion.dart';
+import '../../../../../core/extensions/sizedbox_extenstion.dart';
+import '../../../../../core/router/app_route_name.dart';
+import '../../../../../core/shared/widgets/app_button.dart';
+import '../../../../../core/shared/widgets/app_input.dart';
+import '../../../../../core/shared/widgets/app_login_or_register.dart';
+import '../../../../../core/shared/widgets/auth_divider.dart';
+import '../../../../../core/shared/widgets/on_borading_auth_item.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/extensions/navigator_extenstion.dart';
-import 'package:waheed/core/shared/widgets/app_image.dart';
+import '../../extensions/navigator_extenstion.dart';
+import 'app_image.dart';
 
 class BottomSheetHeader extends StatelessWidget {
   const BottomSheetHeader({

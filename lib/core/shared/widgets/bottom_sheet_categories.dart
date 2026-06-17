@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/shared/utils/app_colors.dart';
+import '../../extensions/sizedbox_extenstion.dart';
+import '../utils/app_colors.dart';
 
 class BottomSheetCategories extends StatefulWidget {
   const BottomSheetCategories({

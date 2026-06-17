@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/home_details/presentation/widgets/details_product_colors.dart';
-import 'package:waheed/_features/home_details/presentation/widgets/details_product_descrption.dart';
-import 'package:waheed/_features/home_details/presentation/widgets/details_product_photo.dart';
-import 'package:waheed/_features/home_details/presentation/widgets/detials_quality_and_driver.dart';
-import 'package:waheed/_features/home_details/presentation/widgets/home_details_nav_bar.dart';
-import 'package:waheed/_features/home_details/presentation/widgets/similar_product.dart';
-import 'package:waheed/_features/home/pages/home/presentation/widgets/rate_product.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/shared/utils/app_colors.dart';
-import 'package:waheed/core/shared/widgets/custom_app_bar.dart';
+import '../widgets/details_product_colors.dart';
+import '../widgets/details_product_descrption.dart';
+import '../widgets/details_product_photo.dart';
+import '../widgets/detials_quality_and_driver.dart';
+import '../widgets/home_details_nav_bar.dart';
+import '../widgets/similar_product.dart';
+import '../../../home/pages/home/presentation/widgets/rate_product.dart';
+import '../../../../core/extensions/sizedbox_extenstion.dart';
+import '../../../../core/shared/utils/app_colors.dart';
+import '../../../../core/shared/widgets/custom_app_bar.dart';
 
 class HomeDetails extends StatelessWidget {
   const HomeDetails({super.key});

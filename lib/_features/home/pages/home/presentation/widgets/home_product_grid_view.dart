@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/home/pages/home/presentation/widgets/home_product_item.dart';
-import 'package:waheed/core/extensions/navigator_extenstion.dart';
-import 'package:waheed/core/router/app_route_name.dart';
+import 'home_product_item.dart';
+import '../../../../../../core/extensions/navigator_extenstion.dart';
+import '../../../../../../core/router/app_route_name.dart';
 
 class HomeProductGridView extends StatelessWidget {
   const HomeProductGridView({super.key});

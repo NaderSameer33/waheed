@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/extensions/navigator_extenstion.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/router/app_route_name.dart';
-import 'package:waheed/core/shared/widgets/app_button.dart';
-import 'package:waheed/core/shared/widgets/app_input.dart';
+import '../../../../../core/extensions/navigator_extenstion.dart';
+import '../../../../../core/extensions/sizedbox_extenstion.dart';
+import '../../../../../core/router/app_route_name.dart';
+import '../../../../../core/shared/widgets/app_button.dart';
+import '../../../../../core/shared/widgets/app_input.dart';
 
 class SuccessStep extends StatelessWidget {
   const SuccessStep({super.key});

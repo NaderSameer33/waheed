@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/shared/widgets/app_button.dart';
-import 'package:waheed/core/shared/widgets/app_input_fild.dart';
+import '../../../../../core/extensions/sizedbox_extenstion.dart';
+import '../../../../../core/shared/widgets/app_button.dart';
+import '../../../../../core/shared/widgets/app_input_fild.dart';
 
 class OtpStep extends StatelessWidget {
   const OtpStep({super.key, required this.onPressed});

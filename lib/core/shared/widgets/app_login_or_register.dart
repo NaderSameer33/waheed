@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/extensions/navigator_extenstion.dart';
-import 'package:waheed/core/router/app_route_name.dart';
+import '../../extensions/navigator_extenstion.dart';
+import '../../router/app_route_name.dart';
 
 class ApploginOrReginster extends StatelessWidget {
   const ApploginOrReginster({

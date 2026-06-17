@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:waheed/core/shared/utils/app_colors.dart';
+import '../utils/app_colors.dart';
 
 class AppInputFild extends StatelessWidget {
   const AppInputFild({super.key});

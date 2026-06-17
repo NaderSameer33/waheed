@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:waheed/_features/home/data/models/app_bottom_nav_model.dart';
-import 'package:waheed/core/shared/utils/app_colors.dart';
-import 'package:waheed/core/shared/widgets/app_image.dart';
+import '../../../_features/home/data/models/app_bottom_nav_model.dart';
+import '../utils/app_colors.dart';
+import 'app_image.dart';
 
 class AppBottomNavBar extends StatefulWidget {
   const AppBottomNavBar({super.key, required this.onChange});

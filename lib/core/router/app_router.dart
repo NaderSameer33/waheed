@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
-import 'package:waheed/_features/auth/forget_passwrod/presentation/views/foreget_password_view.dart';
-import 'package:waheed/_features/auth/login/presentation/views/login_view.dart';
-import 'package:waheed/_features/auth/otp/presentation/views/otp_view.dart';
-import 'package:waheed/_features/auth/register/presentation/views/register_view.dart';
-import 'package:waheed/_features/home_details/presentation/view/home_details.dart';
-import 'package:waheed/_features/home/presentation/views/home_view.dart';
-import 'package:waheed/_features/onborading/views/on_borading_view.dart';
-import 'package:waheed/_features/splash/views/splash_view.dart';
-import 'package:waheed/core/router/app_route_name.dart';
+import '../../_features/auth/forget_passwrod/presentation/views/foreget_password_view.dart';
+import '../../_features/auth/login/presentation/views/login_view.dart';
+import '../../_features/auth/otp/presentation/views/otp_view.dart';
+import '../../_features/auth/register/presentation/views/register_view.dart';
+import '../../_features/home_details/presentation/view/home_details.dart';
+import '../../_features/home/presentation/views/home_view.dart';
+import '../../_features/onborading/views/on_borading_view.dart';
+import '../../_features/splash/views/splash_view.dart';
+import 'app_route_name.dart';
 
 abstract class AppRouter {
   static Route? routeConfig(RouteSettings route) {

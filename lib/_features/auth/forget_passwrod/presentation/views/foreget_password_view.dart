@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/auth/forget_passwrod/presentation/widgets/email_step.dart';
-import 'package:waheed/_features/auth/forget_passwrod/presentation/widgets/forget_pass_indecatore.dart';
-import 'package:waheed/_features/auth/forget_passwrod/presentation/widgets/otp_step.dart';
-import 'package:waheed/_features/auth/forget_passwrod/presentation/widgets/success_step.dart';
-import 'package:waheed/core/enums/forget_password_step.dart';
-import 'package:waheed/core/extensions/navigator_extenstion.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/shared/utils/app_colors.dart';
-import 'package:waheed/core/shared/widgets/app_back.dart';
+import '../widgets/email_step.dart';
+import '../widgets/forget_pass_indecatore.dart';
+import '../widgets/otp_step.dart';
+import '../widgets/success_step.dart';
+import '../../../../../core/enums/forget_password_step.dart';
+import '../../../../../core/extensions/navigator_extenstion.dart';
+import '../../../../../core/extensions/sizedbox_extenstion.dart';
+import '../../../../../core/shared/utils/app_colors.dart';
+import '../../../../../core/shared/widgets/app_back.dart';
 
 class ForegetPasswordView extends StatefulWidget {
   const ForegetPasswordView({super.key});

@@ -1,11 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/extensions/navigator_extenstion.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/router/app_route_name.dart';
-import 'package:waheed/core/shared/widgets/app_button.dart';
-import 'package:waheed/core/shared/widgets/on_borading_auth_item.dart';
+import '../../../core/extensions/navigator_extenstion.dart';
+import '../../../core/extensions/sizedbox_extenstion.dart';
+import '../../../core/router/app_route_name.dart';
+import '../../../core/shared/widgets/app_button.dart';
+import '../../../core/shared/widgets/on_borading_auth_item.dart';
 
 class OnBoradingView extends StatelessWidget {
   const OnBoradingView({super.key});

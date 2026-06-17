@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/home/pages/home/presentation/widgets/rate_product.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/shared/utils/app_colors.dart';
-import 'package:waheed/core/shared/widgets/app_image.dart';
+import 'rate_product.dart';
+import '../../../../../../core/extensions/sizedbox_extenstion.dart';
+import '../../../../../../core/shared/utils/app_colors.dart';
+import '../../../../../../core/shared/widgets/app_image.dart';
 
 class ProductInfo extends StatelessWidget {
   const ProductInfo({super.key, this.isDetils = false});

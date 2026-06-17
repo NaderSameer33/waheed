@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:waheed/_features/cart/presentation/views/cart_view.dart';
-import 'package:waheed/_features/home/pages/home/presentation/views/home_page.dart';
-import 'package:waheed/_features/orders/presentation/views/order_view.dart';
-import 'package:waheed/_features/profile/presentation/views/profile_view.dart';
-import 'package:waheed/_features/home/presentation/widgets/home_app_Bar.dart';
-import 'package:waheed/core/shared/utils/app_colors.dart';
-import 'package:waheed/core/shared/widgets/app_bottom_nav_bar.dart';
+import '../../../cart/presentation/views/cart_view.dart';
+import '../../pages/home/presentation/views/home_page.dart';
+import '../../../orders/presentation/views/order_view.dart';
+import '../../../profile/presentation/views/profile_view.dart';
+import '../widgets/home_app_Bar.dart';
+import '../../../../core/shared/utils/app_colors.dart';
+import '../../../../core/shared/widgets/app_bottom_nav_bar.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

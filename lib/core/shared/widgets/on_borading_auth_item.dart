@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:waheed/core/shared/widgets/app_image.dart';
-import 'package:waheed/core/shared/widgets/shared_container.dart';
+import 'app_image.dart';
+import 'shared_container.dart';
 
 class OnBoradingAuthItem extends StatelessWidget {
   const OnBoradingAuthItem({
