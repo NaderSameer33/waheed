@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/_features/home/pages/home/presentation/widgets/home_category_grid_view.dart';
 import 'package:waheed/_features/home/pages/home/presentation/widgets/home_indecator.dart';
 import 'package:waheed/_features/home/pages/home/presentation/widgets/home_product_grid_view.dart';
+import 'package:waheed/_features/home/pages/home/presentation/widgets/home_slider.dart';
 import 'package:waheed/_features/home/pages/home/presentation/widgets/home_title.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 import 'package:waheed/core/func/helper_function.dart';
@@ -28,12 +29,8 @@ class HomePage extends StatelessWidget {
             onTap: () => showModelSheet(context),
           ),
           25.vs,
-          AppImage(
-            image: 'slider.png',
-          ),
-          12.vs,
-          HomeIndecator(),
-          17.vs,
+          HomeSlider(),
+
           HomeTitle(
             title: 'تسوق حسب التصنيف',
             subTitle: 'عرض الكل',
