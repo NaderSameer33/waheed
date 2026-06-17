@@ -5,8 +5,10 @@ import 'package:waheed/_features/home/pages/home/presentation/widgets/home_indec
 import 'package:waheed/_features/home/pages/home/presentation/widgets/home_product_grid_view.dart';
 import 'package:waheed/_features/home/pages/home/presentation/widgets/home_title.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
+import 'package:waheed/core/func/helper_function.dart';
 import 'package:waheed/core/shared/widgets/app_image.dart';
 import 'package:waheed/core/shared/widgets/app_input.dart';
+import 'package:waheed/core/shared/widgets/custom_bottom_sheet.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -23,6 +25,7 @@ class HomePage extends StatelessWidget {
             hintText: 'البحث عن منتج...',
             prefixIcon: 'search.svg',
             suffixIcon: 'filter.svg',
+            onTap: () => showModelSheet(context),
           ),
           25.vs,
           AppImage(

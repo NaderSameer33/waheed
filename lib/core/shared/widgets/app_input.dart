@@ -14,6 +14,7 @@ class AppInput extends StatefulWidget {
     this.isPassword = false,
     this.focusNode,
     this.textInputAction = TextInputAction.next,
+    this.onTap,
   });
   final String? hintText;
   final String? suffixIcon;
@@ -23,6 +24,7 @@ class AppInput extends StatefulWidget {
   final bool isPassword;
   final FocusNode? focusNode;
   final TextInputAction? textInputAction;
+  final VoidCallback? onTap;
 
   @override
   State<AppInput> createState() => _AppInputState();
@@ -52,7 +54,10 @@ class _AppInputState extends State<AppInput> {
                 icon: Icon(isHide ? Icons.visibility_off : Icons.visibility),
               )
             : widget.suffixIcon != null
-            ? AppImage(image: widget.suffixIcon!)
+            ? IconButton(
+                onPressed: widget.onTap,
+                icon: AppImage(image: widget.suffixIcon!),
+              )
             : null,
         hintStyle: TextStyle(
           color: AppColors.inputColor,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/home/pages/home/details/presentation/widgets/details_product_colors.dart';
-import 'package:waheed/_features/home/pages/home/details/presentation/widgets/details_product_descrption.dart';
-import 'package:waheed/_features/home/pages/home/details/presentation/widgets/details_product_photo.dart';
-import 'package:waheed/_features/home/pages/home/details/presentation/widgets/detials_quality_and_driver.dart';
-import 'package:waheed/_features/home/pages/home/details/presentation/widgets/home_details_nav_bar.dart';
-import 'package:waheed/_features/home/pages/home/details/presentation/widgets/similar_product.dart';
+import 'package:waheed/_features/home_details/presentation/widgets/details_product_colors.dart';
+import 'package:waheed/_features/home_details/presentation/widgets/details_product_descrption.dart';
+import 'package:waheed/_features/home_details/presentation/widgets/details_product_photo.dart';
+import 'package:waheed/_features/home_details/presentation/widgets/detials_quality_and_driver.dart';
+import 'package:waheed/_features/home_details/presentation/widgets/home_details_nav_bar.dart';
+import 'package:waheed/_features/home_details/presentation/widgets/similar_product.dart';
 import 'package:waheed/_features/home/pages/home/presentation/widgets/rate_product.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 import 'package:waheed/core/shared/utils/app_colors.dart';
