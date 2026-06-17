@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/_features/home/pages/home/details/presentation/widgets/similar_product_list_view.dart';
+import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 
 class SimilarProduct extends StatelessWidget {
   const SimilarProduct({super.key});
@@ -27,8 +28,12 @@ class SimilarProduct extends StatelessWidget {
                 style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w500),
               ),
             ),
-            SimilarProductListView(),
           ],
+        ),
+        10.vs,
+        SizedBox(
+          height: MediaQuery.of(context).size.height * .4,
+          child: SimilarProductListView(),
         ),
       ],
     );

@@ -3,9 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/_features/home/pages/home/presentation/widgets/rate_product.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 import 'package:waheed/core/shared/utils/app_colors.dart';
+import 'package:waheed/core/shared/widgets/app_image.dart';
 
 class ProductInfo extends StatelessWidget {
-  const ProductInfo({super.key});
+  const ProductInfo({super.key, this.isDetils = false});
+  final bool isDetils;
 
   @override
   Widget build(BuildContext context) {
@@ -58,26 +60,41 @@ class ProductInfo extends StatelessWidget {
                 ),
               ),
               Spacer(),
-              Container(
-                alignment: Alignment.center,
-                height: 23.h,
-                width: 42.w,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(99.r),
-                  border: BoxBorder.all(
-                    width: 1,
-                    color: AppColors.borderColor,
-                  ),
-                ),
-                child: Text(
-                  'إيجار',
-                  style: TextStyle(
+              if (isDetils)
+                Container(
+                  padding: EdgeInsets.all(4.r),
+                  height: 32.h,
+                  width: 32.w,
+                  decoration: BoxDecoration(
                     color: Colors.black,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 10.sp,
+                    borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  child: AppImage(
+                    image: 'cart.svg',
+                    color: Colors.white,
+                  ),
+                )
+              else
+                Container(
+                  alignment: Alignment.center,
+                  height: 23.h,
+                  width: 42.w,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(99.r),
+                    border: BoxBorder.all(
+                      width: 1,
+                      color: AppColors.borderColor,
+                    ),
+                  ),
+                  child: Text(
+                    'إيجار',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 10.sp,
+                    ),
                   ),
                 ),
-              ),
             ],
           ),
         ],

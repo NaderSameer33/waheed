@@ -7,14 +7,15 @@ class SimilarProductListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 200.h,
-      child: ListView.builder(
-        shrinkWrap: true,
-        physics: BouncingScrollPhysics(),
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (context, index) => HomeProductItem(),
+    return ListView.builder(
+      physics: BouncingScrollPhysics(),
+      scrollDirection: Axis.horizontal,
+      itemCount: 10,
+      itemBuilder: (context, index) => Padding(
+        padding: EdgeInsets.only(left: 16.r),
+        child: HomeProductItem(
+          isDetails: true,
+        ),
       ),
     );
   }
