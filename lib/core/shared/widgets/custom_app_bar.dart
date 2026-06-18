@@ -13,10 +13,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
     required this.title,
     this.isAction = false,
+    this.isSearch = true,
+    this.height = 0,
+    this.isBack = true 
   });
 
   final String title;
-  final bool isAction;
+  final bool isAction, isSearch , isBack ;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +29,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         top: 30.h,
         right: 16.w,
         left: 16.w,
-        bottom: 16.h,
       ),
       decoration: BoxDecoration(color: Colors.white),
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              if(isBack)
               AppBack(),
+              Spacer(),
               Text(
                 title,
                 style: TextStyle(
@@ -42,6 +46,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   color: Colors.black,
                 ),
               ),
+              Spacer(),
               isAction
                   ? Container(
                       height: 48.h,
@@ -63,18 +68,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   : Container(),
             ],
           ),
-          16.vs,
-          AppInput(
-            hintText: 'البحث عن منتج...',
-            prefixIcon: 'search.svg',
-            suffixIcon: 'filter.svg',
-            onTap: () => showModelSheet(context),
-          ),
+          24.vs,
+          if (isSearch)
+            AppInput(
+              hintText: 'البحث عن منتج...',
+              prefixIcon: 'search.svg',
+              suffixIcon: 'filter.svg',
+              onTap: () => showModelSheet(context),
+            ),
         ],
       ),
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(150.h);
+  Size get preferredSize => Size.fromHeight(height);
 }

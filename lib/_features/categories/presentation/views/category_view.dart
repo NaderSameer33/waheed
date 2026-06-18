@@ -12,6 +12,7 @@ class CategoryView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.scaffoldColor,
       appBar: CustomAppBar(
+        height: 150.h,
         title: 'كل التصنيفات',
       ),
       body: ListView.builder(

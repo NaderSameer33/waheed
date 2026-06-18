@@ -27,7 +27,6 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.scaffoldColor,
-      appBar: HomeAppBar(),
       body: IndexedStack(index: curentIndex, children: _list),
       bottomNavigationBar: AppBottomNavBar(
         onChange: (value) {

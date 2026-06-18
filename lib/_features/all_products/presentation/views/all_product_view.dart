@@ -13,6 +13,7 @@ class AllProductView extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.scaffoldColor,
       appBar: CustomAppBar(
+        height: 150.h,
         isAction: true,
         title: 'كل المنتجات',
       ),

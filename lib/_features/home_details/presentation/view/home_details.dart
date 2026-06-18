@@ -21,6 +21,8 @@ class HomeDetails extends StatelessWidget {
       appBar: CustomAppBar(
         isAction: true,
         title: 'تفاصيل المنتج',
+        isSearch: false,
+        height: 70,
       ),
       body: CustomScrollView(
         physics: BouncingScrollPhysics(),

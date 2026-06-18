@@ -17,13 +17,7 @@ class HomeCategoryGridView extends StatelessWidget {
         mainAxisSpacing: 8.r,
         crossAxisSpacing: 8.r,
       ),
-      itemBuilder: (context, index) => Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        child: CategoryItem(width: 40.w),
-      ),
+      itemBuilder: (context, index) => CategoryItem(width: 40.w),
     );
   }
 }
