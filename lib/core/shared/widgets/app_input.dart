@@ -41,6 +41,8 @@ class _AppInputState extends State<AppInput> {
       controller: widget.controller,
       keyboardType: widget.textInputType,
       decoration: InputDecoration(
+        fillColor: AppColors.scaffoldColor,
+        filled: true,
         prefixIcon: widget.prefixIcon != null
             ? AppImage(image: widget.prefixIcon!)
             : null,

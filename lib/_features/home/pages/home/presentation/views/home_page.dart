@@ -41,6 +41,7 @@ class HomePage extends StatelessWidget {
           HomeTitle(
             title: 'أحدث المنتجات',
             subTitle: 'عرض المزيد',
+            onPressed: () => context.pushName(page: AppRouteName.allProduct),
           ),
           16.vs,
           HomeProductGridView(),

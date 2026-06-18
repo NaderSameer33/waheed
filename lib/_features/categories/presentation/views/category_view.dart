@@ -14,13 +14,11 @@ class CategoryView extends StatelessWidget {
       appBar: CustomAppBar(
         title: 'كل التصنيفات',
       ),
-      body: SafeArea(
-        child: ListView.builder(
-          padding: EdgeInsets.only(top: 16.h),
-          itemCount: 4,
-          itemBuilder: (context, index) => CategoryItem(
-            width: double.infinity,
-          ),
+      body: ListView.builder(
+        padding: EdgeInsets.only(top: 16.h),
+        itemCount: 4,
+        itemBuilder: (context, index) => CategoryItem(
+          width: double.infinity,
         ),
       ),
     );
