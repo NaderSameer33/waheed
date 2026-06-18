@@ -17,14 +17,12 @@ class CartView extends StatelessWidget {
         isBack: false,
         isSearch: false,
       ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CartItem(),
-            ],
-          ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CartItem(),
+          ],
         ),
       ),
     );
