@@ -19,6 +19,7 @@ class HomeDetails extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.scaffoldColor,
       appBar: CustomAppBar(
+        isAction: true,
         title: 'تفاصيل المنتج',
       ),
       body: CustomScrollView(
@@ -63,7 +64,6 @@ class HomeDetails extends StatelessWidget {
                   DetailsProductColor(),
 
                   DetailsProductDescrption(),
-
 
                   SimilarProduct(),
                 ],

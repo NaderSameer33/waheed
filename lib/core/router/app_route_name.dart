@@ -9,6 +9,8 @@ abstract class AppRouteName {
  static const otp = '/otp' ; 
  static const home = '/home' ; 
  static const details = '/details' ; 
+ static const categoriy = '/categoriy' ; 
+ static const allProduct = '/allproduct' ; 
 
 
 }

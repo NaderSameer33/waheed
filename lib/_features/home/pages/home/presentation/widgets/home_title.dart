@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeTitle extends StatelessWidget {
-  const HomeTitle({super.key, required this.title, required this.subTitle});
+  const HomeTitle({
+    super.key,
+    required this.title,
+    required this.subTitle,
+    this.onPressed,
+  });
 
   final String title, subTitle;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +26,7 @@ class HomeTitle extends StatelessWidget {
         ),
         Spacer(),
         TextButton(
-          onPressed: () {},
+          onPressed: onPressed,
           child: Text(
             subTitle,
             style: TextStyle(
