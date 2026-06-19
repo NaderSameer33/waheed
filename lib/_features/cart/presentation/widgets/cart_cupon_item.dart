@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
@@ -14,7 +13,10 @@ class CartCuponItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(4.r),
-      margin: EdgeInsets.only(bottom: 30.h, right: 16.w, left: 16.w),
+      margin: EdgeInsets.symmetric(
+        horizontal: 16.r,
+        vertical: 30.r,
+      ),
       height: 52.h,
       width: double.infinity,
       decoration: BoxDecoration(
