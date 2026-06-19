@@ -15,6 +15,8 @@ class AppInput extends StatefulWidget {
     this.focusNode,
     this.textInputAction = TextInputAction.next,
     this.onTap,
+    this.isFilled = true,
+    this.isCupon = false,
   });
   final String? hintText;
   final String? suffixIcon;
@@ -25,6 +27,8 @@ class AppInput extends StatefulWidget {
   final FocusNode? focusNode;
   final TextInputAction? textInputAction;
   final VoidCallback? onTap;
+  final bool isFilled;
+  final bool isCupon;
 
   @override
   State<AppInput> createState() => _AppInputState();
@@ -42,7 +46,7 @@ class _AppInputState extends State<AppInput> {
       keyboardType: widget.textInputType,
       decoration: InputDecoration(
         fillColor: AppColors.scaffoldColor,
-        filled: true,
+        filled: widget.isFilled,
         prefixIcon: widget.prefixIcon != null
             ? AppImage(image: widget.prefixIcon!)
             : null,
@@ -67,9 +71,9 @@ class _AppInputState extends State<AppInput> {
           fontSize: 14.sp,
         ),
         hintText: widget.hintText,
-        border: buildBorder,
-        focusedBorder: buildBorder,
-        enabledBorder: buildBorder,
+        border: widget.isCupon ? InputBorder.none : buildBorder,
+        focusedBorder: widget.isCupon ? InputBorder.none : buildBorder,
+        enabledBorder: widget.isCupon ? InputBorder.none : buildBorder,
       ),
     );
   }
