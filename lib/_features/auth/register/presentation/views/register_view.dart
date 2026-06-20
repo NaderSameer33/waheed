@@ -63,7 +63,7 @@ class RegisterView extends StatelessWidget {
               AppInput(
                 hintText: '+20102233558',
                 textInputType: TextInputType.phone,
-                prefixIcon: 'profile.svg',
+                prefixIcon: 'call.svg',
               ),
               4.vs,
               Text(

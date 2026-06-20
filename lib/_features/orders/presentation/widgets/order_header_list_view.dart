@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/_features/orders/presentation/widgets/order_header_item.dart';
+import 'package:waheed/core/func/helper_function.dart';
 
 class OrderHeaderListView extends StatefulWidget {
   const OrderHeaderListView({super.key});
@@ -30,6 +31,9 @@ class _OrderHeaderListViewState extends State<OrderHeaderListView> {
         itemCount: _list.length,
         itemBuilder: (context, index) => GestureDetector(
           onTap: () {
+            if (index == 0) {
+              showOrderBottomSheet(context);
+            }
             setState(() {
               currentIndex = index;
             });

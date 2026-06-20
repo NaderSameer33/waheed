@@ -1,21 +1,18 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../extensions/navigator_extenstion.dart';
-import '../../extensions/sizedbox_extenstion.dart';
-import 'app_button.dart';
-import 'bottom_sheet_categories.dart';
+import 'package:waheed/_features/orders/presentation/widgets/order_info_wrap_view.dart';
+import 'package:waheed/core/extensions/navigator_extenstion.dart';
+import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
+import 'package:waheed/core/shared/widgets/app_button.dart';
+import 'package:waheed/core/shared/widgets/bottom_sheet_header.dart';
 
-import 'bottom_sheet_header.dart';
-import 'price_domain.dart';
-
-class CustomBottomSheet extends StatelessWidget {
-  const CustomBottomSheet({super.key});
+class OrderBottomSheet extends StatelessWidget {
+  const OrderBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * .5,
+      height: MediaQuery.of(context).size.height * .4,
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -28,22 +25,21 @@ class CustomBottomSheet extends StatelessWidget {
         padding: EdgeInsets.only(
           right: 16.r,
           left: 16.r,
-          bottom: MediaQuery.of(context).padding.bottom,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             BottomSheetHeader(
-              title:'تصفية المنتجات',
+              isOrder: true,
+              title: 'تصفية حسب التاريخ',
             ),
             16.vs,
-            BottomSheetCategories(),
-            16.vs,
-            PriceDomain(),
-            10.vs,
+
+            OrderInfoWrapView(),
+            20.vs,
             AppButton(
               onPressed: () => context.popName(),
-              title: 'عرض النتائج (24)',
+              title: 'تطبيق التصفية',
             ),
           ],
         ),

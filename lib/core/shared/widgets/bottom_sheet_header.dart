@@ -6,7 +6,10 @@ import 'app_image.dart';
 class BottomSheetHeader extends StatelessWidget {
   const BottomSheetHeader({
     super.key,
+    this.isOrder = false, required this.title,
   });
+  final bool isOrder;
+  final String title ;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,7 @@ class BottomSheetHeader extends StatelessWidget {
         ),
         Spacer(),
         Text(
-          'تصفية المنتجات',
+         title , 
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
@@ -27,21 +30,23 @@ class BottomSheetHeader extends StatelessWidget {
           ),
         ),
         Spacer(),
-        IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.replay,
-            size: 16.r,
+        if (!isOrder)
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.replay,
+              size: 16.r,
+            ),
           ),
-        ),
-        Text(
-          'إعادة التعيين',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.w400,
-            fontSize: 14.sp,
+        if (!isOrder)
+          Text(
+            'إعادة التعيين',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w400,
+              fontSize: 14.sp,
+            ),
           ),
-        ),
       ],
     );
   }
