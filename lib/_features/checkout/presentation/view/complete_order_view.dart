@@ -4,14 +4,9 @@ import 'package:waheed/_features/checkout/presentation/widgets/recive_method_ite
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 import 'package:waheed/core/shared/widgets/app_image.dart';
 
-class CompleteOrderView extends StatefulWidget {
+class CompleteOrderView extends StatelessWidget {
   const CompleteOrderView({super.key});
 
-  @override
-  State<CompleteOrderView> createState() => _CompleteOrderViewState();
-}
-
-class _CompleteOrderViewState extends State<CompleteOrderView> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,6 +28,9 @@ class _CompleteOrderViewState extends State<CompleteOrderView> {
         ),
         16.vs,
         ReciveMethodItem(),
+      
+
+        
       ],
     );
   }
