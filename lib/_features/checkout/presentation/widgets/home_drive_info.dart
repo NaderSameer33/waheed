@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
@@ -13,9 +11,12 @@ class HomeDriveInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(
+        bottom: 24.h,
+      ),
       padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 16.w),
       width: double.infinity,
-    
+
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.r),
         color: Colors.white,
