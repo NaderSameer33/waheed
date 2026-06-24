@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/_features/checkout/presentation/widgets/drive_address_item.dart';
+import 'package:waheed/_features/checkout/presentation/widgets/home_drive_cash.dart';
 import 'package:waheed/_features/checkout/presentation/widgets/home_drive_info.dart';
 import 'package:waheed/_features/checkout/presentation/widgets/home_drive_way.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
@@ -16,7 +17,8 @@ class ReciveFromHome extends StatelessWidget {
         DriveAddressItem(),
         16.vs,
         HomeDriveInfo(),
-        HomeDriveWay()  , 
+        HomeDriveWay(),
+        HomeDriveCash(), 
       ],
     );
   }
