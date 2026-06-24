@@ -1,7 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/core/extensions/navigator_extenstion.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
+import 'package:waheed/core/router/app_route_name.dart';
 import 'package:waheed/core/shared/widgets/app_button.dart';
 
 class CartNavBar extends StatelessWidget {
@@ -42,7 +43,10 @@ class CartNavBar extends StatelessWidget {
           ),
           10.hs,
           Expanded(
-            child: AppButton(onPressed: () {}, title: 'إتمام التسوق'),
+            child: AppButton(
+              onPressed: () => context.pushName(page: AppRouteName.checkOut),
+              title: 'إتمام التسوق',
+            ),
           ),
         ],
       ),
