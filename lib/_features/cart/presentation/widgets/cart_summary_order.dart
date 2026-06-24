@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/cart/presentation/views/cart_view.dart';
 import 'package:waheed/_features/cart/presentation/widgets/summary_info.dart';
 import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
 import 'package:waheed/core/shared/widgets/app_image.dart';

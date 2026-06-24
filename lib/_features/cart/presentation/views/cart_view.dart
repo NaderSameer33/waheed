@@ -26,13 +26,15 @@ class CartView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CartListView(),
-            
+
             CartCuponItem(),
             CartSummaryOrder(),
           ],
         ),
       ),
-      bottomNavigationBar: CartNavBar(),
+      bottomNavigationBar: CartNavBar(
+        title: 'إتمام التسوق',
+      ),
     );
   }
 }

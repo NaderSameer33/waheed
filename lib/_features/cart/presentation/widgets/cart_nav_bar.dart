@@ -7,9 +7,9 @@ import 'package:waheed/core/shared/widgets/app_button.dart';
 
 class CartNavBar extends StatelessWidget {
   const CartNavBar({
-    super.key,
+    super.key, required this.title,
   });
-
+  final String title ;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,7 +45,7 @@ class CartNavBar extends StatelessWidget {
           Expanded(
             child: AppButton(
               onPressed: () => context.pushName(page: AppRouteName.checkOut),
-              title: 'إتمام التسوق',
+              title: title ,
             ),
           ),
         ],

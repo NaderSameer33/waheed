@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/cart/presentation/widgets/cart_nav_bar.dart';
 import 'package:waheed/_features/checkout/data/models/order_model.dart';
 import 'package:waheed/_features/checkout/presentation/view/complete_order_view.dart';
 import 'package:waheed/_features/checkout/presentation/view/done_order_view.dart';
@@ -61,6 +62,7 @@ class _CheckOutViewState extends State<CheckOutView> {
           ],
         ),
       ),
+      bottomNavigationBar: CartNavBar(title: 'إتمام الطلب'),
     );
   }
 }
