@@ -28,9 +28,6 @@ class CompleteOrderView extends StatelessWidget {
         ),
         16.vs,
         ReciveMethodItem(),
-      
-
-        
       ],
     );
   }

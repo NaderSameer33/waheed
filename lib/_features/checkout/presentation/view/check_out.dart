@@ -21,6 +21,18 @@ class CheckOutView extends StatefulWidget {
 class _CheckOutViewState extends State<CheckOutView> {
   OrderEnum orderEnum = OrderEnum.completeOrder;
 
+  String buildtitleNavBar() {
+    switch (orderEnum) {
+      case OrderEnum.completeOrder:
+        return 'إتمام الطلب';
+      case OrderEnum.reviewOrder:
+        return 'تأكيد الطلب';
+
+      case OrderEnum.doneOrder:
+        return '';
+    }
+  }
+
   void canPop() {
     switch (orderEnum) {
       case OrderEnum.completeOrder:
@@ -78,12 +90,14 @@ class _CheckOutViewState extends State<CheckOutView> {
         onPressed: canPop,
         title: orderModel.title,
         isSearch: false,
-        height: 56.h,
+        height: 80.h,
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           children: [
+            16.vs,
             BuildOrderBrogressBar(currentIndex: orderModel.index),
             16.vs,
             orderModel.body,
@@ -91,8 +105,9 @@ class _CheckOutViewState extends State<CheckOutView> {
         ),
       ),
       bottomNavigationBar: CartNavBar(
-        title: 'إتمام الطلب',
+        title: buildtitleNavBar(),
         onPressed: orderModel.onPressed,
+        icon: orderEnum == OrderEnum.reviewOrder ? 'done.svg' : null,
       ),
     );
   }

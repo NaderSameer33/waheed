@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/extensions/navigator_extenstion.dart';
 import '../../../../core/extensions/sizedbox_extenstion.dart';
 import '../../../../core/shared/widgets/app_button.dart';
 
 class CartNavBar extends StatelessWidget {
   const CartNavBar({
-    super.key, required this.title, required this.onPressed,
+    super.key,
+    required this.title,
+    required this.onPressed,
+    this.icon,
   });
-  final String title ;
-  final VoidCallback onPressed ; 
+  final String title;
+  final VoidCallback onPressed;
+  final String? icon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,8 +47,9 @@ class CartNavBar extends StatelessWidget {
           10.hs,
           Expanded(
             child: AppButton(
-              onPressed: onPressed , 
-              title: title ,
+              onPressed: onPressed,
+              title: title,
+              icon: icon,
             ),
           ),
         ],

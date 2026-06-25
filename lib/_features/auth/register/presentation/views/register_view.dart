@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../login/presentation/widgets/login_with_social_item.dart';
-import '../../../otp/presentation/views/otp_view.dart';
 import '../../../../../core/extensions/navigator_extenstion.dart';
 import '../../../../../core/extensions/sizedbox_extenstion.dart';
 import '../../../../../core/router/app_route_name.dart';
