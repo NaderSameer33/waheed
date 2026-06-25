@@ -9,14 +9,15 @@ class AppButton extends StatelessWidget {
     required this.title,
     this.icon,
     this.color,
-    this.titleColor
+    this.titleColor , 
+    this.iconColor , 
   });
   final VoidCallback onPressed;
   final String title;
   final String? icon;
   final Color? color;
   final Color? titleColor;
-
+  final Color ? iconColor; 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
@@ -29,7 +30,7 @@ class AppButton extends StatelessWidget {
         fixedSize: Size.fromHeight(56.h),
       ),
       onPressed: onPressed,
-      icon: AppImage(image: icon ?? ''),
+      icon: AppImage(image: icon ?? '' , color: iconColor,),
       label: Text(
         title,
         style: TextStyle(
