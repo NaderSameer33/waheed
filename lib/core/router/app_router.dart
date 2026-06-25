@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:waheed/_features/checkout/presentation/view/done_order_view.dart';
 import '../../_features/all_products/presentation/views/all_product_view.dart';
 import '../../_features/categories/presentation/views/category_view.dart';
 import '../../_features/checkout/presentation/view/check_out.dart';
@@ -59,6 +60,10 @@ abstract class AppRouter {
       case AppRouteName.checkOut:
         return CupertinoPageRoute(
           builder: (context) => CheckOutView(),
+        );
+      case AppRouteName.doneOrder:
+        return CupertinoPageRoute(
+          builder: (context) => DoneOrderView(),
         );
     }
     return null;

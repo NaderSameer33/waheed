@@ -5,6 +5,6 @@ class DoneOrderView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-         return Text('done order');
+    return Scaffold();
   }
 }

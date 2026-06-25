@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/core/router/app_route_name.dart';
 import '../../../cart/presentation/widgets/cart_nav_bar.dart';
 import '../../data/models/order_model.dart';
 import 'complete_order_view.dart';
-import 'done_order_view.dart';
 import 'review_order_view.dart';
 import '../widgets/build_order_progress_bar.dart';
 import '../../../../core/enums/order_enum.dart';
@@ -27,9 +27,6 @@ class _CheckOutViewState extends State<CheckOutView> {
         return 'إتمام الطلب';
       case OrderEnum.reviewOrder:
         return 'تأكيد الطلب';
-
-      case OrderEnum.doneOrder:
-        return '';
     }
   }
 
@@ -40,10 +37,6 @@ class _CheckOutViewState extends State<CheckOutView> {
       case OrderEnum.reviewOrder:
         setState(() {
           orderEnum = OrderEnum.completeOrder;
-        });
-      case OrderEnum.doneOrder:
-        setState(() {
-          orderEnum = OrderEnum.reviewOrder;
         });
     }
   }
@@ -64,20 +57,11 @@ class _CheckOutViewState extends State<CheckOutView> {
       case OrderEnum.reviewOrder:
         return OrderModel(
           onPressed: () {
-            setState(() {
-              orderEnum = OrderEnum.doneOrder;
-            });
+            context.pushName(page: AppRouteName.doneOrder);
           },
           body: ReviewOrderView(),
           index: 1,
           title: 'مراجعه الطلب',
-        );
-      case OrderEnum.doneOrder:
-        return OrderModel(
-          onPressed: () {},
-          body: DoneOrderView(),
-          index: 2,
-          title: '',
         );
     }
   }
