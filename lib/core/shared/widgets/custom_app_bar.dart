@@ -15,9 +15,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.isAction = false,
     this.isSearch = true,
     this.height = 0,
-    this.isBack = true 
+    this.isBack = true, this.onPressed 
   });
-
+ final VoidCallback ? onPressed ;
   final String title;
   final bool isAction, isSearch , isBack ;
   final double height;
@@ -36,7 +36,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           Row(
             children: [
               if(isBack)
-              AppBack(),
+              AppBack(onPressed: onPressed,),
               Spacer(),
               Text(
                 title,
