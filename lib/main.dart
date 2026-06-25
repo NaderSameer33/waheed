@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'core/constants/app_constant.dart';
 import 'core/router/app_route_name.dart';
 import 'core/router/app_router.dart';

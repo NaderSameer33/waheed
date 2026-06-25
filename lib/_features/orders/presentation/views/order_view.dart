@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/orders/presentation/widgets/order_content_list_view.dart';
-import 'package:waheed/_features/orders/presentation/widgets/order_header_list_view.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/shared/widgets/custom_app_bar.dart';
+import '../widgets/order_content_list_view.dart';
+import '../widgets/order_header_list_view.dart';
+import '../../../../core/extensions/sizedbox_extenstion.dart';
+import '../../../../core/shared/widgets/custom_app_bar.dart';
 
 class OrderView extends StatelessWidget {
   const OrderView({super.key});

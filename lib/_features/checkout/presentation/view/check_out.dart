@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/cart/presentation/widgets/cart_nav_bar.dart';
-import 'package:waheed/_features/checkout/data/models/order_model.dart';
-import 'package:waheed/_features/checkout/presentation/view/complete_order_view.dart';
-import 'package:waheed/_features/checkout/presentation/view/done_order_view.dart';
-import 'package:waheed/_features/checkout/presentation/view/review_order_view.dart';
-import 'package:waheed/_features/checkout/presentation/widgets/build_order_progress_bar.dart';
-import 'package:waheed/core/enums/order_enum.dart';
-import 'package:waheed/core/extensions/navigator_extenstion.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/shared/widgets/custom_app_bar.dart';
+import '../../../cart/presentation/widgets/cart_nav_bar.dart';
+import '../../data/models/order_model.dart';
+import 'complete_order_view.dart';
+import 'done_order_view.dart';
+import 'review_order_view.dart';
+import '../widgets/build_order_progress_bar.dart';
+import '../../../../core/enums/order_enum.dart';
+import '../../../../core/extensions/navigator_extenstion.dart';
+import '../../../../core/extensions/sizedbox_extenstion.dart';
+import '../../../../core/shared/widgets/custom_app_bar.dart';
 
 class CheckOutView extends StatefulWidget {
   const CheckOutView({super.key});

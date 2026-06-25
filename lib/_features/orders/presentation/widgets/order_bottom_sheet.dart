@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/orders/presentation/widgets/order_info_wrap_view.dart';
-import 'package:waheed/core/extensions/navigator_extenstion.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/shared/widgets/app_button.dart';
-import 'package:waheed/core/shared/widgets/bottom_sheet_header.dart';
+import 'order_info_wrap_view.dart';
+import '../../../../core/extensions/navigator_extenstion.dart';
+import '../../../../core/extensions/sizedbox_extenstion.dart';
+import '../../../../core/shared/widgets/app_button.dart';
+import '../../../../core/shared/widgets/bottom_sheet_header.dart';
 
 class OrderBottomSheet extends StatelessWidget {
   const OrderBottomSheet({super.key});

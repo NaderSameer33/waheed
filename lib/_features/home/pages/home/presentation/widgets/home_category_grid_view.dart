@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/categories/presentation/widgets/category_item.dart';
+import '../../../../../categories/presentation/widgets/category_item.dart';
 
 class HomeCategoryGridView extends StatelessWidget {
   const HomeCategoryGridView({super.key});

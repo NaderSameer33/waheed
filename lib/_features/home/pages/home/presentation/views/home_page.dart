@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/home/presentation/widgets/home_app_Bar.dart';
-import 'package:waheed/core/extensions/navigator_extenstion.dart';
-import 'package:waheed/core/router/app_route_name.dart';
-import 'package:waheed/core/shared/utils/app_colors.dart';
+import '../../../../presentation/widgets/home_app_Bar.dart';
+import '../../../../../../core/extensions/navigator_extenstion.dart';
+import '../../../../../../core/router/app_route_name.dart';
+import '../../../../../../core/shared/utils/app_colors.dart';
 import '../widgets/home_category_grid_view.dart';
 import '../widgets/home_product_grid_view.dart';
 import '../widgets/home_slider.dart';

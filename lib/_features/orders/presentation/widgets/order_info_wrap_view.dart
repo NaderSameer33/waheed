@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/orders/presentation/widgets/order_bottom_sheet_info.dart';
+import 'order_bottom_sheet_info.dart';
 
 class OrderInfoWrapView extends StatefulWidget {
   const OrderInfoWrapView({

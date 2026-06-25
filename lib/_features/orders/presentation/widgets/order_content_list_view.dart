@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waheed/_features/orders/presentation/widgets/order_content_item.dart';
+import 'order_content_item.dart';
 
 class OrderContentListView extends StatelessWidget {
   const OrderContentListView({super.key});

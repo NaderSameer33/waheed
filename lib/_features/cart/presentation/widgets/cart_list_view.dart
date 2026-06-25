@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/cart/presentation/widgets/cart_item.dart';
+import 'cart_item.dart';
 
 class CartListView extends StatelessWidget {
   const CartListView({

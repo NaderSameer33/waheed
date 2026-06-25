@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/core/extensions/sizedbox_extenstion.dart';
-import 'package:waheed/core/func/helper_function.dart';
-import 'package:waheed/core/shared/widgets/app_input.dart';
+import '../../extensions/sizedbox_extenstion.dart';
+import '../../func/helper_function.dart';
+import 'app_input.dart';
 import '../utils/app_colors.dart';
 import 'app_back.dart';
 import 'app_image.dart';

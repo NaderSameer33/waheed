@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/home/pages/home/presentation/widgets/home_product_grid_view.dart';
+import '../../../home/pages/home/presentation/widgets/home_product_grid_view.dart';
 
-import 'package:waheed/core/shared/utils/app_colors.dart';
-import 'package:waheed/core/shared/widgets/custom_app_bar.dart';
+import '../../../../core/shared/utils/app_colors.dart';
+import '../../../../core/shared/widgets/custom_app_bar.dart';
 
 class AllProductView extends StatelessWidget {
   const AllProductView({super.key});

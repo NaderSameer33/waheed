@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:waheed/_features/all_products/presentation/views/all_product_view.dart';
-import 'package:waheed/_features/categories/presentation/views/category_view.dart';
-import 'package:waheed/_features/checkout/presentation/view/check_out.dart';
+import '../../_features/all_products/presentation/views/all_product_view.dart';
+import '../../_features/categories/presentation/views/category_view.dart';
+import '../../_features/checkout/presentation/view/check_out.dart';
 import '../../_features/auth/forget_passwrod/presentation/views/foreget_password_view.dart';
 import '../../_features/auth/login/presentation/views/login_view.dart';
 import '../../_features/auth/otp/presentation/views/otp_view.dart';

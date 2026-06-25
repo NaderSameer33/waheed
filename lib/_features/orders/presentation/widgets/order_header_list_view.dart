@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waheed/_features/orders/presentation/widgets/order_header_item.dart';
-import 'package:waheed/core/func/helper_function.dart';
+import 'order_header_item.dart';
+import '../../../../core/func/helper_function.dart';
 
 class OrderHeaderListView extends StatefulWidget {
   const OrderHeaderListView({super.key});
