@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:waheed/core/constants/app_constant.dart';
+import 'package:waheed/core/services/cashe/cashe_helper.dart';
 
 class DioIntercpotr implements Interceptor {
   late Dio dio;
@@ -13,10 +15,15 @@ class DioIntercpotr implements Interceptor {
   }
 
   @override
-  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    String token = '';
+  void onRequest(
+    RequestOptions options,
+    RequestInterceptorHandler handler,
+  ) async {
+    String token = await CasheHelper().getAccessToken(
+      key: AppConstant.accessToken,
+    );
+    log('this token is $token');
     dio.options.headers.addAll({'Authorization': 'Bearer $token'});
-    log(options.data.toString());
     handler.next(options);
   }
 
