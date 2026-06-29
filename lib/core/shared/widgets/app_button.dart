@@ -9,15 +9,17 @@ class AppButton extends StatelessWidget {
     required this.title,
     this.icon,
     this.color,
-    this.titleColor , 
-    this.iconColor , 
+    this.titleColor,
+    this.iconColor,
+    this.isLoading = false,
   });
   final VoidCallback onPressed;
   final String title;
   final String? icon;
   final Color? color;
   final Color? titleColor;
-  final Color ? iconColor; 
+  final Color? iconColor;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
@@ -30,15 +32,22 @@ class AppButton extends StatelessWidget {
         fixedSize: Size.fromHeight(56.h),
       ),
       onPressed: onPressed,
-      icon: AppImage(image: icon ?? '' , color: iconColor,),
-      label: Text(
-        title,
-        style: TextStyle(
-          color: titleColor ?? Colors.white,
-          fontSize: 14.sp,
-          fontWeight: FontWeight.bold,
-        ),
+      icon: AppImage(
+        image: icon ?? '',
+        color: iconColor,
       ),
+      label: isLoading
+          ? CircularProgressIndicator(
+              color: Colors.white,
+            )
+          : Text(
+              title,
+              style: TextStyle(
+                color: titleColor ?? Colors.white,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
     );
   }
 }

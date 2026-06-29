@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:waheed/_features/auth/register/presentation/cubit/register_cubit.dart';
 import 'package:waheed/_features/checkout/presentation/view/done_order_view.dart';
+import 'package:waheed/core/services/di/injection.dart';
 import '../../_features/all_products/presentation/views/all_product_view.dart';
 import '../../_features/categories/presentation/views/category_view.dart';
 import '../../_features/checkout/presentation/view/check_out.dart';
@@ -31,7 +34,10 @@ abstract class AppRouter {
         );
       case AppRouteName.register:
         return CupertinoPageRoute(
-          builder: (context) => RegisterView(),
+          builder: (context) => BlocProvider(
+            create: (context) => s1<RegisterCubit>(),
+            child: RegisterView(),
+          ),
         );
       case AppRouteName.otp:
         return CupertinoPageRoute(
