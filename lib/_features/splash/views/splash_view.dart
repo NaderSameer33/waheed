@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/core/constants/app_constant.dart';
+import 'package:waheed/core/services/cashe/cashe_helper.dart';
 import '../../../core/extensions/navigator_extenstion.dart';
 import '../../../core/extensions/sizedbox_extenstion.dart';
 import '../../../core/router/app_route_name.dart';
@@ -23,9 +25,12 @@ class _SplashViewState extends State<SplashView> {
   }
 
   _goToOnborading() {
+    bool? isFirst = CasheHelper().getIsFirst(key: AppConstant.isFirst);
     Timer(
       Duration(seconds: 5),
-      () => context.pushReplacment(page: AppRouteName.onBorading),
+      () => context.pushReplacment(
+        page: isFirst ? AppRouteName.onBorading : AppRouteName.login,
+      ),
     );
   }
 

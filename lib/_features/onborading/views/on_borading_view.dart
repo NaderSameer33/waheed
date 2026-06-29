@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/core/constants/app_constant.dart';
+import 'package:waheed/core/services/cashe/cashe_helper.dart';
 import '../../../core/extensions/navigator_extenstion.dart';
 import '../../../core/extensions/sizedbox_extenstion.dart';
 import '../../../core/router/app_route_name.dart';
@@ -44,8 +46,14 @@ class OnBoradingView extends StatelessWidget {
               FadeInRight(
                 duration: Duration(seconds: 1),
                 child: AppButton(
-                  onPressed: () =>
-                      context.pushReplacment(page: AppRouteName.login),
+                  onPressed: () async {
+                    CasheHelper().setIsFirst(
+                      key: AppConstant.isFirst,
+                      value: false,
+                    );
+                    context.pushReplacment(page: AppRouteName.login);
+                  },
+
                   title: 'البدء الآن',
                 ),
               ),
