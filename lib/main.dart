@@ -7,7 +7,7 @@ import 'package:waheed/core/services/di/injection.dart';
 import 'core/constants/app_constant.dart';
 import 'core/router/app_route_name.dart';
 import 'core/router/app_router.dart';
-import 'firebase_options.dart';
+import 'firebase/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

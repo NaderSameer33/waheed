@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
 class DioErrorHandler {
-  late final String message;
+   final String message;
   DioErrorHandler({ required this.message}) ; 
 
   factory DioErrorHandler.fromDio(DioException dioExc) {
@@ -18,7 +18,7 @@ class DioErrorHandler {
         // TODO: Handle this case.
         throw UnimplementedError();
       case DioExceptionType.badResponse:
-        // TODO: Handle this case.
+      
         throw UnimplementedError();
       case DioExceptionType.cancel:
         // TODO: Handle this case.

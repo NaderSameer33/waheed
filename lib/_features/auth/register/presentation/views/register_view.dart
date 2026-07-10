@@ -37,6 +37,14 @@ class _RegisterViewState extends State<RegisterView> {
         passwrod: passwrodController.text,
         phoneNumber: phoneContorller.text,
       );
+      if (passwrodController.text != confirmPasswordController.text) {
+        showSnakBar(
+          context,
+          text: 'password not  match confirm password',
+          isError: true,
+        );
+        return;
+      }
       await context.read<RegisterCubit>().registerUser(request);
     }
   }
@@ -45,7 +53,7 @@ class _RegisterViewState extends State<RegisterView> {
   Widget build(BuildContext context) {
     return Form(
       key: key,
-      autovalidateMode: AutovalidateMode.onUnfocus,
+      autovalidateMode: AutovalidateMode.always,
 
       child: Scaffold(
         body: OnBoradingAuthItem(
