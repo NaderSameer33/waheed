@@ -4,4 +4,5 @@ abstract class AppConstant {
   static const String isFirst = 'isFirst';
   static const String accessToken = 'accesToken';
   static const String refreshToken = 'refreshToken';
+  static const String userEmail = 'email';
 }

@@ -1,34 +1,47 @@
 import 'package:dio/dio.dart';
 
 class DioErrorHandler {
-   final String message;
-  DioErrorHandler({ required this.message}) ; 
+  final String message;
+  DioErrorHandler({required this.message});
 
   factory DioErrorHandler.fromDio(DioException dioExc) {
     switch (dioExc.type) {
       case DioExceptionType.connectionTimeout:
-       return DioErrorHandler(message: '') ; 
+        return DioErrorHandler(
+          message: 'Connection timed out. Please check your internet connection and try again.',
+        );
       case DioExceptionType.sendTimeout:
-        // TODO: Handle this case.
-        throw UnimplementedError();
+        return DioErrorHandler(
+          message: 'Request timed out while sending data. Please try again.',
+        );
       case DioExceptionType.receiveTimeout:
-        // TODO: Handle this case.
-        throw UnimplementedError();
+        return DioErrorHandler(
+          message: 'Server took too long to respond. Please try again.',
+        );
       case DioExceptionType.badCertificate:
-        // TODO: Handle this case.
-        throw UnimplementedError();
+        return DioErrorHandler(
+          message: 'SSL certificate error. Please contact support.',
+        );
       case DioExceptionType.badResponse:
-      
-        throw UnimplementedError();
+        final statusCode = dioExc.response?.statusCode;
+        final responseData = dioExc.response?.data?.toString() ?? '';
+        return DioErrorHandler(
+          message: responseData.isNotEmpty
+              ? responseData
+              : 'Server error (code: $statusCode). Please try again.',
+        );
       case DioExceptionType.cancel:
-        // TODO: Handle this case.
-        throw UnimplementedError();
+        return DioErrorHandler(
+          message: 'Request was cancelled. Please try again.',
+        );
       case DioExceptionType.connectionError:
-        // TODO: Handle this case.
-        throw UnimplementedError();
+        return DioErrorHandler(
+          message: 'No internet connection. Please check your network and try again.',
+        );
       case DioExceptionType.unknown:
-        // TODO: Handle this case.
-        throw UnimplementedError();
+        return DioErrorHandler(
+          message: dioExc.message ?? 'An unexpected error occurred. Please try again.',
+        );
     }
   }
 }

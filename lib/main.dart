@@ -2,8 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/core/services/api/dio_helper.dart';
 import 'package:waheed/core/services/cashe/cashe_helper.dart';
 import 'package:waheed/core/services/di/injection.dart';
+import 'package:waheed/test_otp.dart';
 import 'core/constants/app_constant.dart';
 import 'core/router/app_route_name.dart';
 import 'core/router/app_router.dart';
@@ -14,8 +16,9 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  DioHelper.initDio();
   setUpInjection();
-  await CasheHelper().initCashe() ; 
+  await CasheHelper().initCashe();
   runApp(const WaheedApp());
 }
 
@@ -42,10 +45,11 @@ class WaheedApp extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
+          home: TestOtp(),
           locale: Locale('ar'),
           supportedLocales: [Locale('ar')],
           debugShowCheckedModeBanner: false,
-          initialRoute: AppRouteName.splash,
+          // initialRoute: AppRouteName.splash,
         ),
       ),
     );

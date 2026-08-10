@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/_features/auth/register/data/models/register_request.dart';
 import 'package:waheed/_features/auth/register/presentation/cubit/register_cubit.dart';
 import 'package:waheed/_features/auth/register/presentation/cubit/register_state.dart';
+import 'package:waheed/core/extensions/navigator_extenstion.dart';
 import 'package:waheed/core/func/helper_function.dart';
+import 'package:waheed/core/router/app_route_name.dart';
 import 'package:waheed/core/shared/utils/app_valdator.dart';
 import '../../../login/presentation/widgets/login_with_social_item.dart';
 import '../../../../../core/extensions/sizedbox_extenstion.dart';
@@ -161,6 +163,8 @@ class _RegisterViewState extends State<RegisterView> {
                 BlocConsumer<RegisterCubit, RegisterState>(
                   listener: (context, state) {
                     if (state is RegisterSucccessState) {
+                      context.pushReplacment(page: AppRouteName.otp);
+
                       showSnakBar(context, text: state.response.message);
                     } else if (state is RegisterFaliureState) {
                       showSnakBar(

@@ -5,8 +5,8 @@ class RegisterResponse {
       refreshToken,
       message,
       accesstokenExperid,
-      refreshTokenExperid;
-
+      refreshTokenExperid,
+      id;
   late bool isAuthcated;
 
   RegisterResponse.fromJson(Map<String, dynamic> json) {
@@ -15,8 +15,9 @@ class RegisterResponse {
     accessToken = json['token'] ?? '';
     refreshToken = json['refreshToken'] ?? '';
     accesstokenExperid = json['tokenExpiry'] ?? '';
-    refreshTokenExperid = json['refreshToken'] ?? '';
+    refreshTokenExperid = json['refreshTokenExpiry'] ?? '';
     isAuthcated = json['isAuthenticated'] ?? false;
     message = json['message'] ?? '';
+    id = json['id'] ?? '';
   }
 }

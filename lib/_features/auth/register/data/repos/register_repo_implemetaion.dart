@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:waheed/_features/auth/register/data/models/register_request.dart';
 import 'package:waheed/_features/auth/register/data/models/register_response.dart';
 import 'package:waheed/_features/auth/register/domain/repos/register_repo.dart';
@@ -12,11 +14,12 @@ class RegisterRepoImplemetaion implements RegisterRepo {
 
   @override
   Future<RegisterResponse> registerUser(RegisterRequest requset) async {
-    final response = await dioHelper.sendData(
+    final response = await DioHelper.sendData(
       endPoint: 'api/Account/register',
       data: requset.toJson(),
     );
     final reigsterReponse = RegisterResponse.fromJson(response.data);
+    log(reigsterReponse.email);
     CasheHelper().savedRefreshToken(
       key: AppConstant.refreshToken,
       value: reigsterReponse.refreshToken,
@@ -24,6 +27,10 @@ class RegisterRepoImplemetaion implements RegisterRepo {
     CasheHelper().savedAccessToken(
       key: AppConstant.accessToken,
       value: reigsterReponse.accessToken,
+    );
+    CasheHelper().saveUserEmail(
+      key: AppConstant.userEmail,
+      value: reigsterReponse.email,
     );
 
     return reigsterReponse;

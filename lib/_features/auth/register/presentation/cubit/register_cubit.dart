@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:waheed/_features/auth/register/data/models/register_request.dart';
 import 'package:waheed/_features/auth/register/domain/repos/register_repo.dart';
 import 'package:waheed/_features/auth/register/presentation/cubit/register_state.dart';
+import 'package:waheed/core/services/api/dio_error_handler.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit(this.registerRepo) : super(RegisterIntinalState());
@@ -15,8 +16,13 @@ class RegisterCubit extends Cubit<RegisterState> {
       final response = await registerRepo.registerUser(request);
       emit(RegisterSucccessState(response: response));
     } on DioException catch (dioError) {
+      final handler = DioErrorHandler.fromDio(dioError);
+      emit(RegisterFaliureState(errorMessage: handler.message));
+    } catch (e) {
       emit(
-        RegisterFaliureState(errorMessage: dioError.response!.data.toString()),
+        RegisterFaliureState(
+          errorMessage: 'An unexpected error occurred. Please try again.',
+        ),
       );
     }
   }

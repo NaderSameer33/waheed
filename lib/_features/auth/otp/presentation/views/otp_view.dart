@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../forget_passwrod/presentation/widgets/email_step.dart';
-import '../../../forget_passwrod/presentation/widgets/otp_step.dart';
-import '../../../forget_passwrod/presentation/widgets/success_step.dart';
-import '../../../../../core/enums/forget_password_step.dart';
+import 'package:waheed/core/constants/app_constant.dart';
+import 'package:waheed/core/services/cashe/cashe_helper.dart';
 import '../../../../../core/extensions/navigator_extenstion.dart';
 import '../../../../../core/router/app_route_name.dart';
 import '../../../../../core/shared/widgets/app_button.dart';
@@ -47,7 +45,8 @@ class OtpView extends StatelessWidget {
               ),
               Text(
                 textAlign: TextAlign.center,
-                'nadersam33r@gmail.com',
+                CasheHelper().getUserEmail(key: AppConstant.userEmail),
+
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
