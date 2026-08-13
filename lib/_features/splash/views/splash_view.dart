@@ -26,10 +26,15 @@ class _SplashViewState extends State<SplashView> {
 
   _goToOnborading() {
     bool? isFirst = CasheHelper().getIsFirst(key: AppConstant.isFirst);
+    bool isAuth = CasheHelper().getIsAuth();
     Timer(
       Duration(seconds: 5),
       () => context.pushReplacment(
-        page: isFirst ? AppRouteName.onBorading : AppRouteName.login,
+        page: isFirst
+            ? AppRouteName.onBorading
+            : isAuth
+            ? AppRouteName.home
+            : AppRouteName.login,
       ),
     );
   }

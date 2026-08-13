@@ -23,6 +23,7 @@ class CasheHelper {
   bool getIsFirst({required String key}) {
     return _sharedPreferences.getBool(key) ?? true;
   }
+
   Future<void> setOtpCode({required String key, required String value}) async {
     await _sharedPreferences.setString(key, value);
   }
@@ -56,5 +57,13 @@ class CasheHelper {
 
   String getUserEmail({required String key}) {
     return _sharedPreferences.getString(key) ?? '';
+  }
+
+  Future<void> setisAuth({required bool value}) async {
+    await _sharedPreferences.setBool('isAuth', value);
+  }
+
+  bool getIsAuth() {
+    return _sharedPreferences.getBool('isAuth') ?? false;
   }
 }

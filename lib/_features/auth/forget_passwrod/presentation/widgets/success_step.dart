@@ -67,9 +67,9 @@ class _SuccessStepState extends State<SuccessStep> {
             listener: (context, state) {
               if (state is ResetPassStateSuccessState) {
                 showSnakBar(context, text: state.message);
-                context.pushReplacment(page: AppRouteName.login);
               } else if (state is ResetPassStateFailureState) {
                 showSnakBar(context, text: state.errorMessage, isError: true);
+                context.pushReplacment(page: AppRouteName.login);
               }
             },
             builder: (context, state) {
