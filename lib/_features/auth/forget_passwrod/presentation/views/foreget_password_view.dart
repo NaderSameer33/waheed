@@ -45,10 +45,9 @@ class _ForegetPasswordViewState extends State<ForegetPasswordView> {
     switch (_currentStep) {
       case ForgetPasswordStep.email:
         return EmailStep(
-          onPressed: () {
-            setState(() {
-              _currentStep = ForgetPasswordStep.otp;
-            });
+          onSuccess: () {
+            _currentStep = ForgetPasswordStep.otp;
+            setState(() {});
           },
           key: ValueKey('email'),
         );

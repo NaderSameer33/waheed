@@ -1,4 +1,6 @@
 import 'package:get_it/get_it.dart';
+import 'package:waheed/_features/auth/forget_passwrod/cubit/forget_password_cubit.dart';
+import 'package:waheed/_features/auth/forget_passwrod/cubit/reset_pass_cubit.dart';
 import 'package:waheed/_features/auth/otp/cubit/otp_cubit.dart';
 import 'package:waheed/_features/auth/register/data/repos/register_repo_implemetaion.dart';
 import 'package:waheed/_features/auth/register/domain/repos/register_repo.dart';
@@ -25,6 +27,16 @@ void setUpInjection() {
   s1.registerFactory<OtpCubit>(
     () => OtpCubit(
       s1<DioHelper>(),
+    ),
+  );
+  s1.registerFactory<ForgetPasswordCubit>(
+    () => ForgetPasswordCubit(
+      dioHelper: s1<DioHelper>(),
+    ),
+  );
+  s1.registerFactory<ResetPassCubit>(
+    () => ResetPassCubit(
+    dioHelper:    s1<DioHelper>(),
     ),
   );
 }

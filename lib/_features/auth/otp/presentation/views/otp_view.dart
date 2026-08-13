@@ -87,7 +87,9 @@ class _OtpViewState extends State<OtpView> {
                 ),
               ),
               10.vs,
-              AppResendCode(),
+              AppResendCode(
+                email:email ,
+              ),
               60.vs,
               BlocConsumer<OtpCubit, OtpState>(
                 listener: (context, state) {

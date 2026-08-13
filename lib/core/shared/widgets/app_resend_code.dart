@@ -1,14 +1,40 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/core/func/helper_function.dart';
+import 'package:waheed/core/services/api/dio_helper.dart';
 
 class AppResendCode extends StatefulWidget {
-  const AppResendCode({super.key});
+  const AppResendCode({super.key, required this.email});
+  final String email;
 
   @override
   State<AppResendCode> createState() => _AppResendCodeState();
 }
 
 class _AppResendCodeState extends State<AppResendCode> {
+  Future<bool> resendOtp() async {
+    final dioHelper = DioHelper();
+    try {
+      final response = await dioHelper.sendData(
+        endPoint: 'api/Account/resend-verification-otp',
+        data: {
+          'email': widget.email,
+        },
+      );
+
+      showSnakBar(context, text: response.data['message']);
+      return true;
+    } on DioException catch (e) {
+      showSnakBar(
+        context,
+        text: e.response?.data['msg'] ?? 'problem found please try again later',
+        isError: true,
+      );
+      return false;
+    }
+  }
+
   late Stream<int> stream;
   bool isSend = true;
   @override
@@ -41,10 +67,14 @@ class _AppResendCodeState extends State<AppResendCode> {
       children: [
         if (isSend == false)
           TextButton(
-            onPressed: () {
-              isSend = true;
-              setState(() {});
-              _startStream();
+            onPressed: () async {
+              bool isSucces = await resendOtp();
+              if (isSucces) {
+                _startStream();
+                setState(() {
+                  isSend = true;
+                });
+              }
             },
             child: Text(
               'اعاده الارسال ',

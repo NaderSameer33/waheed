@@ -23,6 +23,13 @@ class CasheHelper {
   bool getIsFirst({required String key}) {
     return _sharedPreferences.getBool(key) ?? true;
   }
+  Future<void> setOtpCode({required String key, required String value}) async {
+    await _sharedPreferences.setString(key, value);
+  }
+
+  String getOtpCode({required String key}) {
+    return _sharedPreferences.getString(key) ?? '';
+  }
 
   void savedAccessToken({required String key, required String value}) {
     _flutterSecureStorage.write(key: key, value: value);

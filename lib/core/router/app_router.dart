@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:waheed/_features/auth/forget_passwrod/cubit/forget_password_cubit.dart';
+import 'package:waheed/_features/auth/forget_passwrod/cubit/reset_pass_cubit.dart';
 import 'package:waheed/_features/auth/otp/cubit/otp_cubit.dart';
 import 'package:waheed/_features/auth/register/presentation/cubit/register_cubit.dart';
 import 'package:waheed/_features/checkout/presentation/view/done_order_view.dart';
@@ -49,7 +51,18 @@ abstract class AppRouter {
         );
       case AppRouteName.forgetPassword:
         return CupertinoPageRoute(
-          builder: (context) => ForegetPasswordView(),
+          builder: (context) => MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => s1<ResetPassCubit>()),
+              BlocProvider(
+                create: (context) => s1<ForgetPasswordCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => s1<OtpCubit>(),
+              ),
+            ],
+            child: ForegetPasswordView(),
+          ),
         );
       case AppRouteName.home:
         return CupertinoPageRoute(
