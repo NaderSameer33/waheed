@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'app_image.dart';
 
 class AppButton extends StatelessWidget {
@@ -37,9 +38,7 @@ class AppButton extends StatelessWidget {
         color: iconColor,
       ),
       label: isLoading
-          ? CircularProgressIndicator(
-              color: Colors.white,
-            )
+          ? LoadingAnimationWidget.threeArchedCircle(color: Colors.white, size: 30)
           : Text(
               title,
               style: TextStyle(

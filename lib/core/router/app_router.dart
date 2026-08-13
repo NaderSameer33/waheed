@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:waheed/_features/auth/otp/cubit/otp_cubit.dart';
 import 'package:waheed/_features/auth/register/presentation/cubit/register_cubit.dart';
 import 'package:waheed/_features/checkout/presentation/view/done_order_view.dart';
 import 'package:waheed/core/services/di/injection.dart';
@@ -41,7 +42,10 @@ abstract class AppRouter {
         );
       case AppRouteName.otp:
         return CupertinoPageRoute(
-          builder: (context) => OtpView(),
+          builder: (context) => BlocProvider(
+            create: (context) => s1<OtpCubit>(),
+            child: OtpView(),
+          ),
         );
       case AppRouteName.forgetPassword:
         return CupertinoPageRoute(

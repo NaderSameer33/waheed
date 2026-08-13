@@ -34,7 +34,7 @@ class DioHelper {
     ]);
   }
 
-  static Future<Response> getData({
+   Future<Response> getData({
     required String endPoint,
     Map<String, dynamic>? queryParamter,
   }) async {
@@ -44,7 +44,7 @@ class DioHelper {
     );
   }
 
-  static Future<Response> sendData({
+   Future<Response> sendData({
     required String endPoint,
     Map<String, dynamic>? data,
   }) async {

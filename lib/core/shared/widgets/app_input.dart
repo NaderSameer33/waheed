@@ -49,6 +49,7 @@ class _AppInputState extends State<AppInput> {
       controller: widget.controller,
       keyboardType: widget.textInputType,
       decoration: InputDecoration(
+        isDense: true,
         fillColor: AppColors.scaffoldColor,
         filled: widget.isFilled,
         prefixIcon: widget.prefixIcon != null

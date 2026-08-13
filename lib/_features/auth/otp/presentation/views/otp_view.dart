@@ -1,6 +1,12 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/auth/otp/cubit/otp_cubit.dart';
+import 'package:waheed/_features/auth/otp/cubit/otp_state.dart';
 import 'package:waheed/core/constants/app_constant.dart';
+import 'package:waheed/core/func/helper_function.dart';
 import 'package:waheed/core/services/cashe/cashe_helper.dart';
 import '../../../../../core/extensions/navigator_extenstion.dart';
 import '../../../../../core/router/app_route_name.dart';
@@ -10,8 +16,18 @@ import '../../../../../core/extensions/sizedbox_extenstion.dart';
 import '../../../../../core/shared/widgets/app_back.dart';
 import '../../../../../core/shared/widgets/app_resend_code.dart';
 
-class OtpView extends StatelessWidget {
-  const OtpView({super.key});
+class OtpView extends StatefulWidget {
+  const OtpView({
+    super.key,
+  });
+
+  @override
+  State<OtpView> createState() => _OtpViewState();
+}
+
+class _OtpViewState extends State<OtpView> {
+  final email = CasheHelper().getUserEmail(key: AppConstant.userEmail);
+  late String otpCode;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +70,12 @@ class OtpView extends StatelessWidget {
                 ),
               ),
               32.vs,
-              AppInputFild(),
+              AppInputFild(
+                onSubmitted: (vlaue) {
+                  otpCode = vlaue;
+                  log(otpCode);
+                },
+              ),
               50.vs,
               Text(
                 textAlign: TextAlign.center,
@@ -68,10 +89,29 @@ class OtpView extends StatelessWidget {
               10.vs,
               AppResendCode(),
               60.vs,
-              AppButton(
-                onPressed: () =>
-                    context.pushReplacment(page: AppRouteName.login),
-                title: 'تحقق',
+              BlocConsumer<OtpCubit, OtpState>(
+                listener: (context, state) {
+                  if (state is OtpSuccessState) {
+                    context.pushRemoveUtil(page: AppRouteName.login);
+                    showSnakBar(context, text: state.succesMessage);
+                  } else if (state is OtpFaliureState) {
+                    showSnakBar(
+                      context,
+                      text: state.errorMessage,
+                      isError: true,
+                    );
+                  }
+                },
+                builder: (context, state) {
+                  return AppButton(
+                    isLoading: state is OtpLoadingState,
+                    onPressed: () => context.read<OtpCubit>().verifiyOtp(
+                      email: email,
+                      otpCode: otpCode,
+                    ),
+                    title: 'تحقق',
+                  );
+                },
               ),
             ],
           ),

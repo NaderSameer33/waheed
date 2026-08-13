@@ -14,7 +14,7 @@ class RegisterRepoImplemetaion implements RegisterRepo {
 
   @override
   Future<RegisterResponse> registerUser(RegisterRequest requset) async {
-    final response = await DioHelper.sendData(
+    final response = await dioHelper.sendData(
       endPoint: 'api/Account/register',
       data: requset.toJson(),
     );

@@ -58,6 +58,7 @@ class _RegisterViewState extends State<RegisterView> {
       autovalidateMode: AutovalidateMode.always,
 
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
         body: OnBoradingAuthItem(
           height: 746.h,
           child: SingleChildScrollView(
@@ -163,7 +164,7 @@ class _RegisterViewState extends State<RegisterView> {
                 BlocConsumer<RegisterCubit, RegisterState>(
                   listener: (context, state) {
                     if (state is RegisterSucccessState) {
-                      context.pushReplacment(page: AppRouteName.otp);
+                      context.pushName(page: AppRouteName.otp);
 
                       showSnakBar(context, text: state.response.message);
                     } else if (state is RegisterFaliureState) {
