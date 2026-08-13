@@ -6,8 +6,8 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 import '../utils/app_colors.dart';
 
 class AppInputFild extends StatelessWidget {
-  const AppInputFild({super.key, this.onSubmitted}); 
-  final void Function(String)? onSubmitted ; 
+  const AppInputFild({super.key, this.onchange}); 
+  final void Function(String)? onchange ; 
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class AppInputFild extends StatelessWidget {
           onCompleted: (value) {
             log(value.toString());
           },
-        onSubmitted: onSubmitted ,
+        onChanged: onchange ,
           mainAxisAlignment: MainAxisAlignment.center,
           length: 6,
           theme: MaterialPinTheme(

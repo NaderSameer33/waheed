@@ -27,7 +27,7 @@ class OtpView extends StatefulWidget {
 
 class _OtpViewState extends State<OtpView> {
   final email = CasheHelper().getUserEmail(key: AppConstant.userEmail);
-  late String otpCode;
+  String otpCode = '';
 
   @override
   Widget build(BuildContext context) {
@@ -71,9 +71,9 @@ class _OtpViewState extends State<OtpView> {
               ),
               32.vs,
               AppInputFild(
-                onSubmitted: (vlaue) {
+                onchange: (vlaue) {
                   otpCode = vlaue;
-                  log(otpCode);
+                  setState(() {});
                 },
               ),
               50.vs,

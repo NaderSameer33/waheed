@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:toastification/toastification.dart';
 import '../../_features/orders/presentation/widgets/order_bottom_sheet.dart';
 import '../shared/widgets/custom_bottom_sheet.dart';
 
@@ -11,18 +13,12 @@ void showOrderBottomSheet(BuildContext context) => showModalBottomSheet(
   builder: (context) => OrderBottomSheet(),
 );
 
-void showSnakBar(context, {required String text , bool isError = false}) {
-  ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      backgroundColor: isError ? Colors.red : Colors.green ,
-      content: Text(
-        text,
-        style: TextStyle(
-          color: Colors.white,
-
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    ),
+void showSnakBar(context, {required String text, bool isError = false}) {
+  toastification.show(
+    context: context,
+    title: Text(text),
+    autoCloseDuration: const Duration(seconds: 5),
+    type: isError ? ToastificationType.error : ToastificationType.success,
+    style: ToastificationStyle.fillColored,
   );
 }
