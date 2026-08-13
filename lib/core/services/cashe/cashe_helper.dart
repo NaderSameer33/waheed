@@ -9,15 +9,21 @@ class CasheHelper {
     return _instance;
   }
 
+  Future<void> clear() async {
+   await  _sharedPreferences.clear();
+  }
 
-   Future <void >removeToken() async{
-    await _sharedPreferences.remove(AppConstant.accessToken) ;  
+  Future<void> clearStorge() async {
+    await _flutterSecureStorage.deleteAll();
+  }
 
-   }
-   Future <void >removeRefreshToke () async{
-    await _sharedPreferences.remove(AppConstant.refreshToken) ;  
+  Future<void> removeToken() async {
+    await _sharedPreferences.remove(AppConstant.accessToken);
+  }
 
-   }
+  Future<void> removeRefreshToke() async {
+    await _sharedPreferences.remove(AppConstant.refreshToken);
+  }
 
   late SharedPreferences _sharedPreferences;
   late FlutterSecureStorage _flutterSecureStorage;
@@ -43,7 +49,10 @@ class CasheHelper {
     return _sharedPreferences.getString(key) ?? '';
   }
 
-  Future <void> savedAccessToken({required String key, required String value}) async {
+  Future<void> savedAccessToken({
+    required String key,
+    required String value,
+  }) async {
     await _flutterSecureStorage.write(key: key, value: value);
   }
 
@@ -51,7 +60,10 @@ class CasheHelper {
     return await _flutterSecureStorage.read(key: key) ?? '';
   }
 
-  Future <void> savedRefreshToken({required String key, required String value}) async{
+  Future<void> savedRefreshToken({
+    required String key,
+    required String value,
+  }) async {
     await _flutterSecureStorage.write(key: key, value: value);
   }
 

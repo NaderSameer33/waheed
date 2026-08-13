@@ -23,10 +23,10 @@ class DioInterceptor extends QueuedInterceptor {
   }
 
   @override
-  void onError(DioException error, ErrorInterceptorHandler handler) async {
-    if (error.response?.statusCode != 401) return handler.next(error);
+  void onError(DioException err, ErrorInterceptorHandler handler) async {
+    if (err.response?.statusCode != 401) return handler.next(err);
 
-    final failedToken = error.requestOptions.headers['Authorization']
+    final failedToken = err.requestOptions.headers['Authorization']
         ?.toString()
         .replaceFirst('Bearer ', '');
     final currentToken = await _cache.getAccessToken(
@@ -34,14 +34,14 @@ class DioInterceptor extends QueuedInterceptor {
     );
 
     if (currentToken.isNotEmpty && currentToken != failedToken) {
-      return _retry(error, currentToken, handler);
+      return _retry(err, currentToken, handler);
     }
 
     try {
       final refreshToken = await _cache.getRefreshToken(
         key: AppConstant.refreshToken,
       );
-      if (refreshToken.isEmpty) return _logout(error, handler);
+      if (refreshToken.isEmpty) return _logout(err, handler);
 
       final response = await _refreshDio.post(
         'api/Account/refresh-token',
@@ -59,11 +59,11 @@ class DioInterceptor extends QueuedInterceptor {
         value: response.data['refreshToken'],
       );
 
-      return _retry(error, newAccess, handler);
+      return _retry(err, newAccess, handler);
     } on DioException catch (_) {
-      return _logout(error, handler);
+      return _logout(err, handler);
     } catch (_) {
-      return _logout(error, handler);
+      return _logout(err, handler);
     }
   }
 
