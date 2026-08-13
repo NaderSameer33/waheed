@@ -21,7 +21,7 @@ class DioHelper {
     );
 
     dio!.interceptors.addAll([
-      DioIntercpotr(dio!),
+      DioInterceptor(dio!),
       PrettyDioLogger(
         responseBody: true,
         request: true,

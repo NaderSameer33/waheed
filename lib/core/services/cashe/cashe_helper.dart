@@ -1,5 +1,6 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:waheed/core/constants/app_constant.dart';
 
 class CasheHelper {
   CasheHelper._internal();
@@ -7,6 +8,16 @@ class CasheHelper {
   factory CasheHelper() {
     return _instance;
   }
+
+
+   Future <void >removeToken() async{
+    await _sharedPreferences.remove(AppConstant.accessToken) ;  
+
+   }
+   Future <void >removeRefreshToke () async{
+    await _sharedPreferences.remove(AppConstant.refreshToken) ;  
+
+   }
 
   late SharedPreferences _sharedPreferences;
   late FlutterSecureStorage _flutterSecureStorage;
@@ -32,16 +43,16 @@ class CasheHelper {
     return _sharedPreferences.getString(key) ?? '';
   }
 
-  void savedAccessToken({required String key, required String value}) {
-    _flutterSecureStorage.write(key: key, value: value);
+  Future <void> savedAccessToken({required String key, required String value}) async {
+    await _flutterSecureStorage.write(key: key, value: value);
   }
 
   Future<String> getAccessToken({required String key}) async {
     return await _flutterSecureStorage.read(key: key) ?? '';
   }
 
-  void savedRefreshToken({required String key, required String value}) {
-    _flutterSecureStorage.write(key: key, value: value);
+  Future <void> savedRefreshToken({required String key, required String value}) async{
+    await _flutterSecureStorage.write(key: key, value: value);
   }
 
   Future<String> getRefreshToken({required String key}) async {
