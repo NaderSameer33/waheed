@@ -53,7 +53,7 @@ class _OtpStepState extends State<OtpStep> {
             AppInputFild(
               onchange: (value) {
                 otpCode = value;
-                CasheHelper().setOtpCode(key: 'otpCode', value: value) ;
+                CasheHelper().setOtpCode(key: 'otpCode', value: value);
               },
             ),
             70.vs,
@@ -61,13 +61,13 @@ class _OtpStepState extends State<OtpStep> {
               listener: (context, state) {
                 if (state is OtpSuccessState) {
                   showSnakBar(context, text: state.succesMessage);
+                  widget.onPressed();
                 } else if (state is OtpFaliureState) {
                   showSnakBar(
                     context,
                     text: state.errorMessage,
                     isError: true,
                   );
-                  widget.onPressed();
                 }
               },
               builder: (context, state) {

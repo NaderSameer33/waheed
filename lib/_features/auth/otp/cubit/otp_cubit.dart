@@ -21,7 +21,7 @@ class OtpCubit extends Cubit<OtpState> {
         },
       );
 
-      emit(OtpSuccessState(succesMessage: response.data['msg']));
+      emit(OtpSuccessState(succesMessage: response.data['message']));
     } on DioException catch (e) {
       emit(OtpFaliureState(errorMessage: e.response?.data['msg']));
     }

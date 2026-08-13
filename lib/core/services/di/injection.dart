@@ -37,12 +37,12 @@ void setUpInjection() {
   );
   s1.registerFactory<ResetPassCubit>(
     () => ResetPassCubit(
-    dioHelper:    s1<DioHelper>(),
+      dioHelper: s1<DioHelper>(),
     ),
   );
   s1.registerFactory<LoginCubit>(
     () => LoginCubit(
-    dioHelper:    s1<DioHelper>(),
+      dioHelper: s1<DioHelper>(),
     ),
   );
 }
