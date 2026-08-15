@@ -6,12 +6,10 @@ class OrderContentListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        physics: BouncingScrollPhysics(),
-        itemCount: 10,
-        itemBuilder: (context, index) => OrderContentItem(),
-      ),
+    return ListView.builder(
+      physics: BouncingScrollPhysics(),
+      itemCount: 10,
+      itemBuilder: (context, index) => OrderContentItem(),
     );
   }
 }
