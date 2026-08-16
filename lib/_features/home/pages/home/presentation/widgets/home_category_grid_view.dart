@@ -5,6 +5,7 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:waheed/_features/categories/cubit/category_cubit.dart';
 import 'package:waheed/_features/categories/cubit/category_state.dart';
 import 'package:waheed/_features/categories/data/models/category_model.dart';
+import 'package:waheed/core/shared/widgets/api_error_view.dart';
 import '../../../../../categories/presentation/widgets/category_item.dart';
 
 class HomeCategoryGridView extends StatelessWidget {
@@ -22,7 +23,12 @@ class HomeCategoryGridView extends StatelessWidget {
             ),
           );
         } else if (state is CategoryFailureState) {
-          return Center(child: Text(state.errorMessage));
+          return SizedBox(
+            child: ApiErrorView(
+              error: state.error,
+              onRetry: () => context.read<CategoryCubit>().getCategory(),
+            ),
+          );
         } else if (state is CategorySuccessState) {
           return GridView.builder(
             physics: NeverScrollableScrollPhysics(),

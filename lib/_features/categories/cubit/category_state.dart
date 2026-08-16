@@ -1,4 +1,5 @@
 import 'package:waheed/_features/categories/data/models/category_model.dart';
+import 'package:waheed/core/services/api/api_error.dart';
 
 class CategoryState {}
 
@@ -10,6 +11,6 @@ class CategorySuccessState extends CategoryState {
 }
 
 class CategoryFailureState extends CategoryState {
-  final String errorMessage;
-  CategoryFailureState(this.errorMessage);
+  final ApiError error;
+  CategoryFailureState(this.error);
 }

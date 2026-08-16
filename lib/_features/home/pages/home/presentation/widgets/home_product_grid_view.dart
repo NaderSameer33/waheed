@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:waheed/_features/all_products/presentation/cubit/all_product_cubit.dart';
 import 'package:waheed/_features/all_products/presentation/cubit/all_product_state.dart';
+import 'package:waheed/core/shared/widgets/api_error_view.dart';
 import 'home_product_item.dart';
 import '../../../../../../core/extensions/navigator_extenstion.dart';
 import '../../../../../../core/router/app_route_name.dart';
@@ -24,12 +25,13 @@ class HomeProductGridView extends StatelessWidget {
               ),
             ),
           );
-        } else if (state.error.isNotEmpty) {
+        } else if (state.error != null) {
           return SliverToBoxAdapter(
             child: SizedBox(
-              height: 300.h,
-              child: Center(
-                child: Text(state.error),
+              height: 340.h,
+              child: ApiErrorView(
+                error: state.error!,
+                onRetry: () => context.read<AllProductCubit>().retry(),
               ),
             ),
           );
@@ -38,7 +40,25 @@ class HomeProductGridView extends StatelessWidget {
             child: SizedBox(
               height: 300.h,
               child: Center(
-                child: Text('no Products Found '),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.inventory_2_outlined,
+                      size: 48.sp,
+                      color: Colors.grey.shade400,
+                    ),
+                    SizedBox(height: 12.h),
+                    Text(
+                      'لا توجد منتجات',
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.grey.shade600,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           );

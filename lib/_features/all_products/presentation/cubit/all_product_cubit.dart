@@ -1,8 +1,11 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:waheed/_features/all_products/data/models/all_produts_model.dart';
 import 'package:waheed/_features/all_products/data/repos/app_proudct_repo.dart';
 import 'package:waheed/_features/all_products/presentation/cubit/all_product_state.dart';
+import 'package:waheed/core/services/api/api_error.dart';
+import 'package:waheed/core/services/api/api_error_handler.dart';
 
 class AllProductCubit extends Cubit<AllProductState> {
   AllProductCubit({required this.allProductsRepo}) : super(AllProductState());
@@ -25,7 +28,7 @@ class AllProductCubit extends Cubit<AllProductState> {
     _allProducts = [];
     _searchQuery = '';
     _categoryId = categoryId;
-    emit(state.copyWith(isLoading: true, hasMore: true));
+    emit(state.copyWith(isLoading: true, hasMore: true, clearError: true));
     await _featch();
   }
 
@@ -46,6 +49,7 @@ class AllProductCubit extends Cubit<AllProductState> {
           isLoading: false,
           isLoadingMore: false,
           hasMore: products.length == pageSize,
+          clearError: true,
         ),
       );
       page++;
@@ -53,7 +57,20 @@ class AllProductCubit extends Cubit<AllProductState> {
       if (isClosed) return;
       emit(
         state.copyWith(
-          error: e.toString(),
+          error: ApiErrorHandler().handlerDioError(e),
+          isLoading: false,
+          isLoadingMore: false,
+        ),
+      );
+    } catch (_) {
+      if (isClosed) return;
+      emit(
+        state.copyWith(
+          error: const ApiError(
+            message: 'حدث خطأ ما',
+            descrption: 'حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.',
+            iconData: CupertinoIcons.exclamationmark_triangle,
+          ),
           isLoading: false,
           isLoadingMore: false,
         ),
