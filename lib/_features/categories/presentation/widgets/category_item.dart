@@ -8,9 +8,15 @@ import '../../../../core/shared/utils/app_colors.dart';
 import '../../../../core/shared/widgets/app_image.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({super.key, required this.width, required this.model});
+  const CategoryItem({
+    super.key,
+    required this.width,
+    required this.model,
+    required this.icon,
+  });
   final double width;
   final CategoryModel model;
+  final String icon;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +52,7 @@ class CategoryItem extends StatelessWidget {
                   ),
                 ],
               ),
-              child: AppImage(image: 'suit.svg'),
+              child: AppImage(image: icon),
             ),
             8.hs,
             Text(

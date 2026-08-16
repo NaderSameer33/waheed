@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:waheed/_features/categories/cubit/category_cubit.dart';
 import 'package:waheed/_features/categories/cubit/category_state.dart';
+import 'package:waheed/_features/categories/data/models/category_model.dart';
 import '../../../../../categories/presentation/widgets/category_item.dart';
 
 class HomeCategoryGridView extends StatelessWidget {
@@ -20,25 +21,28 @@ class HomeCategoryGridView extends StatelessWidget {
               size: 30,
             ),
           );
-          
-        }else if (state is CategoryFailureState){ 
-          return Center(child: Text(state.errorMessage)) ; 
-        } else if(state is CategorySuccessState) { 
-   return GridView.builder(
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          itemCount: state.model.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 151.w / 56.h,
-            mainAxisSpacing: 8.r,
-            crossAxisSpacing: 8.r,
-          ),
-          itemBuilder: (context, index) => CategoryItem(width: 40.w , model: state.model[index],),
-        );
-        } 
-        return SizedBox() ; 
-     
+        } else if (state is CategoryFailureState) {
+          return Center(child: Text(state.errorMessage));
+        } else if (state is CategorySuccessState) {
+          return GridView.builder(
+            physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: state.model.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 151.w / 56.h,
+              mainAxisSpacing: 8.r,
+              crossAxisSpacing: 8.r,
+            ),
+            itemBuilder: (context, index) => CategoryItem(
+              width: 40.w,
+              model: state.model[index],
+
+              icon: CategoryModel.iamges[index],
+            ),
+          );
+        }
+        return SizedBox();
       },
     );
   }
