@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/all_products/data/models/all_produts_model.dart'
+    hide Colors;
 
-import '../../../../../../core/extensions/sizedbox_extenstion.dart';
 import '../../../../../../core/shared/widgets/app_image.dart';
 import 'product_info.dart';
 
@@ -9,12 +10,13 @@ class HomeProductItem extends StatelessWidget {
   const HomeProductItem({
     super.key,
     this.isDetails = false,
+    required this.product,
   });
   final bool isDetails;
+  final Proudtcs product;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.r),
         color: Colors.white,
@@ -24,11 +26,18 @@ class HomeProductItem extends StatelessWidget {
         children: [
           Stack(
             children: [
-              AppImage(
-                image: 'suit.png',
-                height: 176.h,
-                fit: BoxFit.fill,
+              Expanded(
+                child: AppImage(
+                  topSpacing: 8,
+                  borderRadiut: 16,
+
+                  width: double.infinity,
+                  image: product.mainImageUrl,
+                  height: 176.h,
+                  fit: BoxFit.fill,
+                ),
               ),
+
               if (isDetails)
                 Positioned(
                   top: 4.h,
@@ -70,8 +79,9 @@ class HomeProductItem extends StatelessWidget {
                 ),
             ],
           ),
-          10.vs,
+
           ProductInfo(
+            products: product,
             isDetils: isDetails,
           ),
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:waheed/_features/all_products/presentation/cubit/all_product_cubit.dart';
 import 'package:waheed/_features/auth/forget_passwrod/cubit/forget_password_cubit.dart';
 import 'package:waheed/_features/auth/forget_passwrod/cubit/reset_pass_cubit.dart';
 import 'package:waheed/_features/auth/login/cubit/login_cubit.dart';
@@ -70,7 +71,10 @@ abstract class AppRouter {
         );
       case AppRouteName.home:
         return CupertinoPageRoute(
-          builder: (context) => HomeView(),
+          builder: (context) => BlocProvider(
+            create: (context) => s1<AllProductCubit>(),
+            child: HomeView(),
+          ),
         );
       case AppRouteName.details:
         return CupertinoPageRoute(
@@ -82,7 +86,10 @@ abstract class AppRouter {
         );
       case AppRouteName.allProduct:
         return CupertinoPageRoute(
-          builder: (context) => AllProductView(),
+          builder: (context) => BlocProvider(
+            create: (context) => s1<AllProductCubit>(),
+            child: AllProductView(),
+          ),
         );
       case AppRouteName.checkOut:
         return CupertinoPageRoute(

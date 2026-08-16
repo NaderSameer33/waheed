@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/all_products/data/models/all_produts_model.dart';
 import '../../../home/pages/home/presentation/widgets/home_product_item.dart';
 
 class SimilarProductListView extends StatelessWidget {
@@ -14,6 +15,7 @@ class SimilarProductListView extends StatelessWidget {
       itemBuilder: (context, index) => Padding(
         padding: EdgeInsets.only(left: 16.r),
         child: HomeProductItem(
+          product: Proudtcs(),
           isDetails: true,
         ),
       ),

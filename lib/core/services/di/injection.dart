@@ -1,4 +1,6 @@
 import 'package:get_it/get_it.dart';
+import 'package:waheed/_features/all_products/data/repos/app_proudct_repo.dart';
+import 'package:waheed/_features/all_products/presentation/cubit/all_product_cubit.dart';
 import 'package:waheed/_features/auth/forget_passwrod/cubit/forget_password_cubit.dart';
 import 'package:waheed/_features/auth/forget_passwrod/cubit/reset_pass_cubit.dart';
 import 'package:waheed/_features/auth/login/cubit/login_cubit.dart';
@@ -44,5 +46,15 @@ void setUpInjection() {
     () => LoginCubit(
       dioHelper: s1<DioHelper>(),
     ),
+  );
+
+  s1.registerLazySingleton<AllProductsRepo>(
+    () => AllProductsRepo(
+      dioHelper: s1<DioHelper>(),
+    ),
+  );
+
+  s1.registerFactory<AllProductCubit>(
+    () => AllProductCubit(allProductsRepo: s1<AllProductsRepo>()),
   );
 }
