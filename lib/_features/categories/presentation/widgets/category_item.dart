@@ -21,7 +21,10 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.pushName(page: AppRouteName.categoriy),
+      onTap: () => context.pushName(
+        page: AppRouteName.categoriy,
+        arguments: CategoryArg(id: model.id, name: model.nameAr),
+      ),
       child: Container(
         margin: EdgeInsets.only(bottom: 8.h, right: 16.w, left: 16.w),
         height: 56.h,

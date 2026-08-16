@@ -19,6 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   });
  final VoidCallback ? onPressed ;
   final String title;
+  
   final bool isAction, isSearch , isBack ;
   final double height;
   final void Function(String)? onSearchChanged;

@@ -7,7 +7,9 @@ import 'package:waheed/_features/auth/login/cubit/login_cubit.dart';
 import 'package:waheed/_features/auth/otp/cubit/otp_cubit.dart';
 import 'package:waheed/_features/auth/register/presentation/cubit/register_cubit.dart';
 import 'package:waheed/_features/categories/cubit/category_cubit.dart';
+import 'package:waheed/_features/categories/data/models/category_model.dart';
 import 'package:waheed/_features/checkout/presentation/view/done_order_view.dart';
+import 'package:waheed/core/router/app_page_router.dart';
 import 'package:waheed/core/services/di/injection.dart';
 import '../../_features/all_products/presentation/views/all_product_view.dart';
 import '../../_features/categories/presentation/views/category_view.dart';
@@ -23,41 +25,47 @@ import '../../_features/splash/views/splash_view.dart';
 import 'app_route_name.dart';
 
 abstract class AppRouter {
-  static Route? routeConfig(RouteSettings route) {
-    switch (route.name) {
+  static Route? routeConfig(RouteSettings settings) {
+    switch (settings.name) {
       case AppRouteName.splash:
-        return CupertinoPageRoute(
-          builder: (context) => SplashView(),
+        return AppPageRoute(
+          settings: settings,
+          page: SplashView(),
         );
 
       case AppRouteName.onBorading:
-        return CupertinoPageRoute(
-          builder: (context) => OnBoradingView(),
+        return AppPageRoute(
+          settings: settings,
+          page: OnBoradingView(),
         );
       case AppRouteName.login:
-        return CupertinoPageRoute(
-          builder: (context) => BlocProvider(
+        return AppPageRoute(
+          settings: settings,
+          page: BlocProvider(
             create: (context) => s1<LoginCubit>(),
             child: LoginView(),
           ),
         );
       case AppRouteName.register:
-        return CupertinoPageRoute(
-          builder: (context) => BlocProvider(
+        return AppPageRoute(
+          settings: settings,
+          page: BlocProvider(
             create: (context) => s1<RegisterCubit>(),
             child: RegisterView(),
           ),
         );
       case AppRouteName.otp:
-        return CupertinoPageRoute(
-          builder: (context) => BlocProvider(
+        return AppPageRoute(
+          settings: settings,
+          page: BlocProvider(
             create: (context) => s1<OtpCubit>(),
             child: OtpView(),
           ),
         );
       case AppRouteName.forgetPassword:
-        return CupertinoPageRoute(
-          builder: (context) => MultiBlocProvider(
+        return AppPageRoute(
+          settings: settings,
+          page: MultiBlocProvider(
             providers: [
               BlocProvider(create: (context) => s1<ResetPassCubit>()),
               BlocProvider(
@@ -71,8 +79,9 @@ abstract class AppRouter {
           ),
         );
       case AppRouteName.home:
-        return CupertinoPageRoute(
-          builder: (context) => MultiBlocProvider(
+        return AppPageRoute(
+          settings: settings,
+          page: MultiBlocProvider(
             providers: [
               BlocProvider(
                 create: (context) => s1<AllProductCubit>(),
@@ -85,27 +94,40 @@ abstract class AppRouter {
           ),
         );
       case AppRouteName.details:
-        return CupertinoPageRoute(
-          builder: (context) => HomeDetails(),
+        return AppPageRoute(
+          settings: settings,
+          page: HomeDetails(),
         );
       case AppRouteName.categoriy:
-        return CupertinoPageRoute(
-          builder: (context) => CategoryView(),
+        final args = settings.arguments as CategoryArg;
+
+        return AppPageRoute(
+          settings: settings,
+          page: BlocProvider(
+            create: (context) => s1<AllProductCubit>(),
+            child: CategoryView(
+              id: args.id,
+              name: args.name,
+            ),
+          ),
         );
       case AppRouteName.allProduct:
-        return CupertinoPageRoute(
-          builder: (context) => BlocProvider(
+        return AppPageRoute(
+          settings: settings,
+          page: BlocProvider(
             create: (context) => s1<AllProductCubit>(),
             child: AllProductView(),
           ),
         );
       case AppRouteName.checkOut:
-        return CupertinoPageRoute(
-          builder: (context) => CheckOutView(),
+        return AppPageRoute(
+          settings: settings,
+          page: CheckOutView(),
         );
       case AppRouteName.doneOrder:
-        return CupertinoPageRoute(
-          builder: (context) => DoneOrderView(),
+        return AppPageRoute(
+          settings: settings,
+          page: DoneOrderView(),
         );
     }
     return null;

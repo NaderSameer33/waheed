@@ -10,12 +10,14 @@ class AllProductsRepo {
   Future<List<Proudtcs>> getProduts({
     required int pageSize,
     required int pageIndex,
+    int? categoryId,
   }) async {
     final response = await dioHelper.getData(
       endPoint: 'api/Products',
       queryParamter: {
         "PageSize": pageSize,
         "PageIndex": pageIndex,
+        if (categoryId != null) "CategoryId": categoryId,
       },
     );
 

@@ -17,12 +17,14 @@ class AllProductCubit extends Cubit<AllProductState> {
 
   List<Proudtcs> _allProducts = [];
   String _searchQuery = '';
+  int? _categoryId;
 
-  Future<void> loadFirstPage() async {
+  Future<void> loadFirstPage({int? categoryId}) async {
     if (isFeatching) return;
     page = firstPage;
     _allProducts = [];
     _searchQuery = '';
+    _categoryId = categoryId;
     emit(state.copyWith(isLoading: true, hasMore: true));
     await _featch();
   }
@@ -34,6 +36,7 @@ class AllProductCubit extends Cubit<AllProductState> {
       final products = await allProductsRepo.getProduts(
         pageSize: pageSize,
         pageIndex: page,
+        categoryId: _categoryId,
       );
       if (isClosed) return;
       _allProducts.addAll(products);
