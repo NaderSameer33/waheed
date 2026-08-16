@@ -15,12 +15,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.isAction = false,
     this.isSearch = true,
     this.height = 0,
-    this.isBack = true, this.onPressed 
+    this.isBack = true, this.onPressed, this.onSearchChanged,
   });
  final VoidCallback ? onPressed ;
   final String title;
   final bool isAction, isSearch , isBack ;
   final double height;
+  final void Function(String)? onSearchChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +76,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               prefixIcon: 'search.svg',
               suffixIcon: 'filter.svg',
               onTap: () => showModelSheet(context),
+              onChanged: onSearchChanged,
             ),
         ],
       ),

@@ -22,6 +22,8 @@ class ProductInfo extends StatelessWidget {
           8.vs,
           Text(
             products.nameAr,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,

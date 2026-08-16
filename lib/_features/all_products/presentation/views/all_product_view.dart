@@ -49,6 +49,8 @@ class _AllProductViewState extends State<AllProductView> {
         height: 150.h,
         isAction: true,
         title: 'كل المنتجات',
+        onSearchChanged: (value) =>
+            context.read<AllProductCubit>().search(value),
       ),
       body: RefreshIndicator(
         onRefresh: () => context.read<AllProductCubit>().loadFirstPage(),

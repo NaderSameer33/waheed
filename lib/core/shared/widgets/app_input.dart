@@ -18,7 +18,7 @@ class AppInput extends StatefulWidget {
     this.onTap,
     this.isFilled = true,
     this.isCupon = false,
-    this.validator,
+    this.validator, this.onChanged,
   });
   final String? hintText;
   final String? suffixIcon;
@@ -32,6 +32,7 @@ class AppInput extends StatefulWidget {
   final bool isFilled;
   final bool isCupon;
   final String? Function(String?)? validator;
+  final  void Function(String)? onChanged ;
 
   @override
   State<AppInput> createState() => _AppInputState();
@@ -42,6 +43,7 @@ class _AppInputState extends State<AppInput> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: widget.onChanged ,
       validator: widget.validator,
       textInputAction: widget.textInputAction,
       focusNode: widget.focusNode,
