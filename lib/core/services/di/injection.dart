@@ -8,6 +8,7 @@ import 'package:waheed/_features/auth/otp/cubit/otp_cubit.dart';
 import 'package:waheed/_features/auth/register/data/repos/register_repo_implemetaion.dart';
 import 'package:waheed/_features/auth/register/domain/repos/register_repo.dart';
 import 'package:waheed/_features/auth/register/presentation/cubit/register_cubit.dart';
+import 'package:waheed/_features/categories/cubit/category_cubit.dart';
 import 'package:waheed/core/services/api/dio_helper.dart';
 
 final s1 = GetIt.instance;
@@ -56,5 +57,8 @@ void setUpInjection() {
 
   s1.registerFactory<AllProductCubit>(
     () => AllProductCubit(allProductsRepo: s1<AllProductsRepo>()),
+  );
+  s1.registerFactory<CategoryCubit>(
+    () => CategoryCubit(dioHelper: s1<DioHelper>()),
   );
 }

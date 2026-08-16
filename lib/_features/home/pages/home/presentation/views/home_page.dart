@@ -23,13 +23,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final controller = ScrollController();
-  
 
   @override
   void initState() {
     super.initState();
-     context.read<AllProductCubit>().loadFirstPage();
-     controller.addListener(_onScroll);
+    context.read<AllProductCubit>().loadFirstPage();
+    controller.addListener(_onScroll);
   }
 
   void _onScroll() {
@@ -83,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                       title: 'تسوق حسب التصنيف',
                       subTitle: 'عرض الكل',
                       onPressed: () =>
-                          context.pushName(page: AppRouteName.categoriy),
+                          context.pushName(page: AppRouteName.allProduct),
                     ),
                     15.vs,
                     HomeCategoryGridView(),

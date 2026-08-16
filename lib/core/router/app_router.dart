@@ -6,6 +6,7 @@ import 'package:waheed/_features/auth/forget_passwrod/cubit/reset_pass_cubit.dar
 import 'package:waheed/_features/auth/login/cubit/login_cubit.dart';
 import 'package:waheed/_features/auth/otp/cubit/otp_cubit.dart';
 import 'package:waheed/_features/auth/register/presentation/cubit/register_cubit.dart';
+import 'package:waheed/_features/categories/cubit/category_cubit.dart';
 import 'package:waheed/_features/checkout/presentation/view/done_order_view.dart';
 import 'package:waheed/core/services/di/injection.dart';
 import '../../_features/all_products/presentation/views/all_product_view.dart';
@@ -71,8 +72,15 @@ abstract class AppRouter {
         );
       case AppRouteName.home:
         return CupertinoPageRoute(
-          builder: (context) => BlocProvider(
-            create: (context) => s1<AllProductCubit>(),
+          builder: (context) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => s1<AllProductCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => s1<CategoryCubit>()..getCategory(),
+              ),
+            ],
             child: HomeView(),
           ),
         );

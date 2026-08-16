@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/categories/data/models/category_model.dart';
 import '../../../../core/extensions/navigator_extenstion.dart';
 import '../../../../core/extensions/sizedbox_extenstion.dart';
 import '../../../../core/router/app_route_name.dart';
@@ -7,13 +8,14 @@ import '../../../../core/shared/utils/app_colors.dart';
 import '../../../../core/shared/widgets/app_image.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({super.key, required this.width});
+  const CategoryItem({super.key, required this.width, required this.model});
   final double width;
+  final CategoryModel model;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.pushName(page: AppRouteName.allProduct),
+      onTap: () => context.pushName(page: AppRouteName.categoriy),
       child: Container(
         margin: EdgeInsets.only(bottom: 8.h, right: 16.w, left: 16.w),
         height: 56.h,
@@ -48,7 +50,7 @@ class CategoryItem extends StatelessWidget {
             ),
             8.hs,
             Text(
-              'بدلات',
+              model.nameAr,
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 14.sp,
