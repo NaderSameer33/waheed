@@ -1,11 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:waheed/core/constants/app_constant.dart';
+import 'package:waheed/core/router/app_route_name.dart';
 import 'package:waheed/core/services/cashe/cashe_helper.dart';
+import 'package:waheed/core/services/navigation/navigation_service.dart';
 
 class DioInterceptor extends QueuedInterceptor {
   final Dio dio;
   final Dio _refreshDio;
   final _cache = CasheHelper();
+  bool _isLoggingOut = false;
 
   DioInterceptor(this.dio)
     : _refreshDio = Dio(BaseOptions(baseUrl: AppConstant.baseUrl));
@@ -50,11 +53,11 @@ class DioInterceptor extends QueuedInterceptor {
 
       final newAccess = response.data['token'] as String;
 
-      _cache.savedAccessToken(
+      await _cache.savedAccessToken(
         key: AppConstant.accessToken,
         value: newAccess,
       );
-      _cache.savedRefreshToken(
+      await _cache.savedRefreshToken(
         key: AppConstant.refreshToken,
         value: response.data['refreshToken'],
       );
@@ -87,6 +90,19 @@ class DioInterceptor extends QueuedInterceptor {
   ) async {
     await _cache.removeRefreshToke();
     await _cache.removeToken();
+    await _cache.setisAuth(value: false);
+    _redirectToLogin();
     handler.next(error);
+  }
+
+  void _redirectToLogin() {
+    if (_isLoggingOut) return;
+    final navigatorState = NavigationService.navigatorKey.currentState;
+    if (navigatorState == null) return;
+
+    _isLoggingOut = true;
+    navigatorState
+        .pushNamedAndRemoveUntil(AppRouteName.login, (route) => false)
+        .whenComplete(() => _isLoggingOut = false);
   }
 }

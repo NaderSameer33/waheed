@@ -6,6 +6,7 @@ import 'package:waheed/core/router/app_route_name.dart';
 import 'package:waheed/core/services/api/dio_helper.dart';
 import 'package:waheed/core/services/cashe/cashe_helper.dart';
 import 'package:waheed/core/services/di/injection.dart';
+import 'package:waheed/core/services/navigation/navigation_service.dart';
 import 'core/constants/app_constant.dart';
 import 'core/router/app_router.dart';
 import 'firebase/firebase_options.dart';
@@ -34,6 +35,7 @@ class WaheedApp extends StatelessWidget {
       child: GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
         child: MaterialApp(
+          navigatorKey: NavigationService.navigatorKey,
           onGenerateRoute: AppRouter.routeConfig,
           theme: ThemeData(
             scaffoldBackgroundColor: Colors.white,
