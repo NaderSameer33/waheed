@@ -1,25 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/all_products/data/models/all_produts_model.dart'
+    hide Colors;
 import '../../../../core/extensions/sizedbox_extenstion.dart';
 import '../../../../core/shared/widgets/app_image.dart';
 
 class DetailsProductColor extends StatefulWidget {
   const DetailsProductColor({
     super.key,
+    required this.proudtcs,
   });
+  final Proudtcs proudtcs;
 
   @override
   State<DetailsProductColor> createState() => _DetailsProductColorState();
 }
 
 class _DetailsProductColorState extends State<DetailsProductColor> {
-  final _list = [
-    Color(0xff3F4651),
-    Color(0xff172554),
-    Color(0xff1A1A1A),
-    Color(0xffC9B79C),
-  ];
   int currentIndex = 0;
+
+  Color _colorFromHex(String hex) {
+    final cleaned = hex.replaceAll('#', '').trim();
+    final value = int.tryParse(cleaned, radix: 16);
+    if (value == null) return Colors.grey;
+    return Color(0xFF000000 | value);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,7 +42,7 @@ class _DetailsProductColorState extends State<DetailsProductColor> {
 
             Spacer(),
             Text(
-              'رصاصي داكن',
+              widget.proudtcs.colors[currentIndex].colorNameAr,
               style: TextStyle(
                 fontWeight: FontWeight.w400,
                 fontSize: 12.sp,
@@ -48,7 +54,7 @@ class _DetailsProductColorState extends State<DetailsProductColor> {
         Row(
           children: [
             ...List.generate(
-              4,
+              widget.proudtcs.colors.length,
               (index) => GestureDetector(
                 onTap: () {
                   setState(() {
@@ -62,7 +68,9 @@ class _DetailsProductColorState extends State<DetailsProductColor> {
                   width: 40.w,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: _list[index],
+                    color: _colorFromHex(
+                      widget.proudtcs.colors[index].colorHex,
+                    ),
                     border: Border.all(
                       width: 1,
                       color: currentIndex == index

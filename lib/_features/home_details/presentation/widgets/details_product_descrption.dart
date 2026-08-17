@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/all_products/data/models/all_produts_model.dart'
+    hide Colors;
 import '../../../../core/extensions/sizedbox_extenstion.dart';
 import '../../../../core/shared/utils/app_colors.dart';
 
 class DetailsProductDescrption extends StatefulWidget {
-  const DetailsProductDescrption({super.key});
+  const DetailsProductDescrption({super.key, required this.proudtcs});
+  final Proudtcs proudtcs;
 
   @override
   State<DetailsProductDescrption> createState() =>
@@ -28,7 +31,7 @@ class _DetailsProductDescrptionState extends State<DetailsProductDescrption> {
         ),
         11.vs,
         Text(
-          'بدلة رجالية كلاسيكية بقصة عصرية أنيقة، مصنوعة من أجود الأقمشة وتُفصّل خصيصاً وفقاً لقياساتك التي تدخلها عبر معالج القياسات. مثالية للمناسبات الرسمية والاجتماعات.',
+          widget.proudtcs.descriptionAr,
           style: TextStyle(
             color: AppColors.infoColor,
             fontWeight: FontWeight.w400,

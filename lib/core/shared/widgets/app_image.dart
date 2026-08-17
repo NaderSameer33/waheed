@@ -45,7 +45,7 @@ class AppImage extends StatelessWidget {
         ),
         imageUrl: image,
         errorWidget: (context, url, error) =>
-            Image.asset('assets/images/error.png'),
+            Image.asset('assets/images/suit.png'),
       );
     } else if (image.endsWith('json')) {
       child = Lottie.asset(

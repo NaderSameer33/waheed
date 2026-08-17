@@ -76,7 +76,10 @@ class HomeProductGridView extends StatelessWidget {
               ),
               itemBuilder: (context, index) {
                 return GestureDetector(
-                  onTap: () => context.pushName(page: AppRouteName.details),
+                  onTap: () => context.pushName(
+                    page: AppRouteName.details,
+                    arguments: state.products[index],
+                  ),
                   child: HomeProductItem(
                     product: state.products[index],
                   ),

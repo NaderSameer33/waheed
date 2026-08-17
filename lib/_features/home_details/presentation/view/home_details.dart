@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/all_products/data/models/all_produts_model.dart'
+    hide Colors;
 
 import '../../../../core/extensions/sizedbox_extenstion.dart';
 import '../../../../core/shared/utils/app_colors.dart';
@@ -13,7 +15,8 @@ import '../widgets/home_details_nav_bar.dart';
 import '../widgets/similar_product.dart';
 
 class HomeDetails extends StatelessWidget {
-  const HomeDetails({super.key});
+  const HomeDetails({super.key, required this.product});
+  final Proudtcs product;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,9 @@ class HomeDetails extends StatelessWidget {
       body: CustomScrollView(
         physics: BouncingScrollPhysics(),
         slivers: [
-          DetailsProductPhoto(),
+          DetailsProductPhoto(
+            proudtcs: product,
+          ),
           SliverToBoxAdapter(
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 16.r),
@@ -41,7 +46,7 @@ class HomeDetails extends StatelessWidget {
                 children: [
                   16.vs,
                   Text(
-                    'بدلة كلاسيكية',
+                    product.categoryName,
                     style: TextStyle(
                       color: Color(0xffC9A961),
                       fontWeight: FontWeight.bold,
@@ -50,7 +55,7 @@ class HomeDetails extends StatelessWidget {
                   ),
                   4.vs,
                   Text(
-                    'بدلة رجالية رصاصي فاخرة',
+                    product.nameAr,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20.sp,
@@ -64,11 +69,17 @@ class HomeDetails extends StatelessWidget {
                   Divider(),
                   16.vs,
 
-                  DetailsProductColor(),
+                  DetailsProductColor(
+                    proudtcs: product,
+                  ),
 
-                  DetailsProductDescrption(),
+                  DetailsProductDescrption(
+                    proudtcs: product,
+                  ),
 
-                  SimilarProduct(),
+                  SimilarProduct(
+                    proudtc: product,
+                  ),
                 ],
               ),
             ),

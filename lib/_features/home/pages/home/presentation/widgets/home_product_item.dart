@@ -26,21 +26,19 @@ class HomeProductItem extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Expanded(
-                child: AppImage(
-                  topSpacing: 8,
-                  borderRadiut: 16,
+              AppImage(
+                width: double.infinity,
+                topSpacing: 8,
+                borderRadiut: 16,
 
-                  width: double.infinity,
-                  image: product.mainImageUrl,
-                  height: 176.h,
-                  fit: BoxFit.fill,
-                ),
+                image: product.mainImageUrl,
+                height: 176.h,
+                fit: BoxFit.fill,
               ),
 
               if (isDetails)
                 Positioned(
-                  top: 4.h,
+                  top: 10.h,
                   right: 4,
                   left: 4,
                   child: Row(

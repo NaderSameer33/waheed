@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:waheed/_features/all_products/data/models/all_produts_model.dart';
 import 'package:waheed/_features/all_products/presentation/cubit/all_product_cubit.dart';
 import 'package:waheed/_features/auth/forget_passwrod/cubit/forget_password_cubit.dart';
 import 'package:waheed/_features/auth/forget_passwrod/cubit/reset_pass_cubit.dart';
@@ -94,9 +95,15 @@ abstract class AppRouter {
           ),
         );
       case AppRouteName.details:
+        final args = settings.arguments as Proudtcs;
         return AppPageRoute(
           settings: settings,
-          page: HomeDetails(),
+          page: BlocProvider(
+            create: (context) => s1<AllProductCubit>(),
+            child: HomeDetails(
+              product: args,
+            ),
+          ),
         );
       case AppRouteName.categoriy:
         final args = settings.arguments as CategoryArg;

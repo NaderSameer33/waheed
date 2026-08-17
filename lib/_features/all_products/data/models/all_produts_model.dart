@@ -45,6 +45,7 @@ class Proudtcs {
   final num stockQuantity;
   final bool isCustomizable;
   final bool isRental;
+  final int categoryId;
   final String categoryName;
   final String mainImageUrl;
   final List<Images> images;
@@ -63,6 +64,7 @@ class Proudtcs {
     this.stockQuantity = 0,
     this.isCustomizable = false,
     this.isRental = false,
+    this.categoryId = 0,
     this.categoryName = '',
     this.mainImageUrl = '',
     this.images = const [],
@@ -83,6 +85,7 @@ class Proudtcs {
       stockQuantity: json['stockQuantity'] ?? 0,
       isCustomizable: json['isCustomizable'] ?? false,
       isRental: json['isRental'] ?? false,
+      categoryId: json['categoryId'] ?? 1,
       categoryName: json['categoryName'] ?? '',
       mainImageUrl: json['mainImageUrl'] ?? '',
       images: (json['images'] as List<dynamic>? ?? [])
