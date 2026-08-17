@@ -15,7 +15,7 @@ class ReciveFromShop extends StatelessWidget {
         24.vs,
         HomeDriveCash(),
         24.vs,
-        CartSummaryOrder(),
+        // CartSummaryOrder(),
       ],
     );
   }

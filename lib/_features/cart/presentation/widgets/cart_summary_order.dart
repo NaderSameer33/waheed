@@ -1,15 +1,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/cart/data/models/cart_model.dart';
 import 'summary_info.dart';
 import '../../../../core/extensions/sizedbox_extenstion.dart';
 import '../../../../core/shared/widgets/app_image.dart';
 
 class CartSummaryOrder extends StatefulWidget {
   const CartSummaryOrder({
-    super.key,
+    super.key, required this.cartModel,
   });
-
+ final CartModel cartModel ;
   @override
   State<CartSummaryOrder> createState() => _CartSummaryOrderState();
 }

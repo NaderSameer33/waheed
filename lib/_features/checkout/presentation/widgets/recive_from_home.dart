@@ -19,7 +19,7 @@ class ReciveFromHome extends StatelessWidget {
         HomeDriveWay(),
         24.vs,
         HomeDriveCash(),
-        CartSummaryOrder(),
+        // CartSummaryOrder(),
       ],
     );
   }

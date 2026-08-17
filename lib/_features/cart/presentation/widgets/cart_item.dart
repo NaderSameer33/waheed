@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/_features/cart/data/models/cart_model.dart';
 import 'cart_add_remove_button.dart';
 import '../../../../core/extensions/sizedbox_extenstion.dart';
 import '../../../../core/shared/utils/app_colors.dart';
@@ -8,8 +9,10 @@ import '../../../../core/shared/widgets/app_image.dart';
 class CartItem extends StatefulWidget {
   const CartItem({
     super.key,
+    required this.item,
   });
 
+  final CartItemModel item;
   @override
   State<CartItem> createState() => _CartItemState();
 }
@@ -56,7 +59,7 @@ class _CartItemState extends State<CartItem> {
             AppImage(
               borderRadiut: 12.r,
 
-              image: 'suit.png',
+              image: widget.item.mainImageUrl,
               height: 120.h,
               width: 104.w,
               fit: BoxFit.fill,
@@ -67,7 +70,7 @@ class _CartItemState extends State<CartItem> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'بدلة كلاسيكية سوداء',
+                    widget.item.productNameAr,
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
@@ -76,7 +79,7 @@ class _CartItemState extends State<CartItem> {
                   ),
                   2.vs,
                   Text(
-                    'صوف إيطالي فاخر',
+                    widget.item.productNameAr,
                     style: TextStyle(
                       color: AppColors.infoColor,
                       fontWeight: FontWeight.w400,
@@ -113,7 +116,7 @@ class _CartItemState extends State<CartItem> {
                         TextSpan(
                           children: [
                             TextSpan(
-                              text: '2,450',
+                              text: widget.item.price.toString(),
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20.sp,
