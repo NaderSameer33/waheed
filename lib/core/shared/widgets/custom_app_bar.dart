@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waheed/core/extensions/navigator_extenstion.dart';
+import 'package:waheed/core/router/app_route_name.dart';
 import '../../extensions/sizedbox_extenstion.dart';
 import '../../func/helper_function.dart';
 import 'app_input.dart';
@@ -15,12 +17,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.isAction = false,
     this.isSearch = true,
     this.height = 0,
-    this.isBack = true, this.onPressed, this.onSearchChanged,
+    this.isBack = true,
+    this.onPressed,
+    this.onSearchChanged,
   });
- final VoidCallback ? onPressed ;
+  final VoidCallback? onPressed;
   final String title;
-  
-  final bool isAction, isSearch , isBack ;
+
+  final bool isAction, isSearch, isBack;
   final double height;
   final void Function(String)? onSearchChanged;
 
@@ -37,8 +41,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         children: [
           Row(
             children: [
-              if(isBack)
-              AppBack(onPressed: onPressed,),
+              if (isBack)
+                AppBack(
+                  onPressed: onPressed,
+                ),
               Spacer(),
               Text(
                 title,
@@ -50,21 +56,24 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               Spacer(),
               isAction
-                  ? Container(
-                      height: 48.h,
-                      width: 48.w,
-                      margin: EdgeInsets.only(left: 16.r),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: BoxBorder.all(
-                          color: AppColors.borderColor,
-                          width: 1,
+                  ? GestureDetector(
+                      onTap: () => context.pushName(page: AppRouteName.cart),
+                      child: Container(
+                        height: 48.h,
+                        width: 48.w,
+                        margin: EdgeInsets.only(left: 16.r),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: BoxBorder.all(
+                            color: AppColors.borderColor,
+                            width: 1,
+                          ),
+                          color: Colors.white,
                         ),
-                        color: Colors.white,
-                      ),
-                      child: AppImage(
-                        image: 'cart.svg',
-                        color: Colors.black,
+                        child: AppImage(
+                          image: 'cart.svg',
+                          color: Colors.black,
+                        ),
                       ),
                     )
                   : Container(),

@@ -7,6 +7,7 @@ import 'package:waheed/_features/auth/forget_passwrod/cubit/reset_pass_cubit.dar
 import 'package:waheed/_features/auth/login/cubit/login_cubit.dart';
 import 'package:waheed/_features/auth/otp/cubit/otp_cubit.dart';
 import 'package:waheed/_features/auth/register/presentation/cubit/register_cubit.dart';
+import 'package:waheed/_features/cart/presentation/views/cart_view.dart';
 import 'package:waheed/_features/categories/cubit/category_cubit.dart';
 import 'package:waheed/_features/categories/data/models/category_model.dart';
 import 'package:waheed/_features/checkout/presentation/view/done_order_view.dart';
@@ -135,6 +136,11 @@ abstract class AppRouter {
         return AppPageRoute(
           settings: settings,
           page: DoneOrderView(),
+        );
+      case AppRouteName.cart:
+        return AppPageRoute(
+          settings: settings,
+          page: CartView(),
         );
     }
     return null;

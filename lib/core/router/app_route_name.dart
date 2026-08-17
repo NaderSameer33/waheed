@@ -11,4 +11,5 @@ abstract class AppRouteName {
   static const allProduct = '/allproduct';
   static const checkOut = '/checkOut';
   static const doneOrder = '/doneOrder';
+  static const cart = '/cart';
 }

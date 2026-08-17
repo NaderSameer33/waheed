@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waheed/_features/all_products/data/models/all_produts_model.dart'
     hide Colors;
+import 'package:waheed/_features/all_products/presentation/cubit/all_product_cubit.dart';
 import 'package:waheed/core/extensions/navigator_extenstion.dart';
 import 'package:waheed/core/router/app_route_name.dart';
+import 'package:waheed/core/services/di/injection.dart';
 import 'similar_product_list_view.dart';
 import '../../../../core/extensions/sizedbox_extenstion.dart';
 
@@ -38,8 +41,11 @@ class SimilarProduct extends StatelessWidget {
         10.vs,
         SizedBox(
           height: MediaQuery.of(context).size.height * .4,
-          child: SimilarProductListView(
-            proudtcs : proudtc , 
+          child: BlocProvider(
+            create: (context) => s1<AllProductCubit>(),
+            child: SimilarProductListView(
+              proudtcs : proudtc ,
+            ),
           ),
         ),
       ],

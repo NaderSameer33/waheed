@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:waheed/_features/all_products/presentation/cubit/all_product_cubit.dart';
 import 'package:waheed/_features/all_products/presentation/cubit/all_product_state.dart';
+import 'package:waheed/_features/home_details/presentation/view/home_details.dart';
+import 'package:waheed/core/router/app_page_router.dart';
 import 'package:waheed/core/shared/widgets/api_error_view.dart';
 import 'home_product_item.dart';
-import '../../../../../../core/extensions/navigator_extenstion.dart';
-import '../../../../../../core/router/app_route_name.dart';
 
 class HomeProductGridView extends StatelessWidget {
   const HomeProductGridView({super.key});
@@ -75,10 +75,16 @@ class HomeProductGridView extends StatelessWidget {
                 crossAxisSpacing: 16.r,
               ),
               itemBuilder: (context, index) {
+                final cubit = context.read<AllProductCubit>();
                 return GestureDetector(
-                  onTap: () => context.pushName(
-                    page: AppRouteName.details,
-                    arguments: state.products[index],
+                  onTap: () => Navigator.push(
+                    context,
+                    AppPageRoute(
+                      page: BlocProvider.value(
+                        value: cubit,
+                        child: HomeDetails(product: state.products[index]),
+                      ),
+                    ),
                   ),
                   child: HomeProductItem(
                     product: state.products[index],
